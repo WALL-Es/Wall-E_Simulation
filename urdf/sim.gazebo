@@ -17,26 +17,34 @@
 </gazebo>
 
 <gazebo reference="Wheel2_1">
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
+  <minDepth>0.001</minDepth>
+  <maxVel>0.1</maxVel>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="Wheels_1">
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
+  <minDepth>0.001</minDepth>
+  <maxVel>0.1</maxVel>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="Wheels3_1">
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
+  <minDepth>0.001</minDepth>
+  <maxVel>0.1</maxVel>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="Wheels4_1">
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
+  <minDepth>0.001</minDepth>
+  <maxVel>0.1</maxVel>
   <self_collide>true</self_collide>
 </gazebo>
 
@@ -196,16 +204,6 @@
   <state_interface name="effort"/>
 </joint>
 
-<joint name="Revolute 34">
-   <state_interface name="position"/>
-   <state_interface name="velocity"/>
-</joint>
-
-<joint name="Revolute 35">
-   <state_interface name="position"/>
-   <state_interface name="velocity"/>
-</joint>
-
 </ros2_control>
 <gazebo>
 <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
@@ -215,5 +213,22 @@
    <render_engine>ogre2</render_engine>
 </plugin>
 <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"/>
+
+
+  <plugin name="diff_drive" filename="libgazebo_ros_diff_drive.so">
+    <update_rate>50</update_rate>
+    <left_joint>left_wheel_joint</left_joint>
+    <right_joint>right_wheel_joint</right_joint>
+    <wheel_separation>0.4</wheel_separation>
+    <wheel_diameter>0.2</wheel_diameter>
+    <max_wheel_torque>20</max_wheel_torque>
+    <max_wheel_acceleration>1.0</max_wheel_acceleration>
+    <publish_odom>true</publish_odom>
+    <publish_odom_tf>true</publish_odom_tf>
+    <publish_wheel_tf>true</publish_wheel_tf>
+    <odometry_frame>odom</odometry_frame>
+    <robot_base_frame>base_link</robot_base_frame>
+  </plugin>
+
 </gazebo>
 </robot>

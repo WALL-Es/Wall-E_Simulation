@@ -10,12 +10,12 @@
     <mass value="3.1148330063772516"/>
     <inertia ixx="0.032507" iyy="0.034335" izz="0.029521" ixy="-0.0" iyz="0.001867" ixz="0.0"/>
   </inertial>
-  <visual>
+  <visual name="visual_0">
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find sim_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find sim_description)/meshes/__visual__base_link_715a4d03a5_0.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="fusion_Paek__Beige__c3b53efd9f"/>
   </visual>
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -31,12 +31,12 @@
     <mass value="0.025973504992578146"/>
     <inertia ixx="4e-06" iyy="0.0" izz="4e-06" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
   </inertial>
-  <visual>
+  <visual name="visual_0">
     <origin xyz="-0.27 0.012358 -0.2" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find sim_description)/meshes/Button_Head_Small_Solid_Rivet_ASME_B18.1.1_-_3_8_x_1_1_4_Steel_Plain_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find sim_description)/meshes/__visual__Button_Head_Small_Solid_Rivet_ASME_B18.1.1_-_3_8_x_1_1_4_Steel_Plain_1_053bc43f51_0.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="fusion_Steel___Satin_7dcf9b04aa"/>
   </visual>
   <collision>
     <origin xyz="-0.27 0.012358 -0.2" rpy="0 0 0"/>
@@ -52,12 +52,12 @@
     <mass value="0.0946935065934851"/>
     <inertia ixx="6.8e-05" iyy="4e-05" izz="4e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
   </inertial>
-  <visual>
+  <visual name="visual_0">
     <origin xyz="-0.665 0.042358 -0.017023" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find sim_description)/meshes/Wheel2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find sim_description)/meshes/__visual__Wheel2_1_6cc1698ccd_0.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="fusion_Nylon_12__with_Formlabs_Fuse_1_3D_Printer__9b6938a61d"/>
   </visual>
   <collision>
     <origin xyz="-0.665 0.042358 -0.017023" rpy="0 0 0"/>
@@ -73,12 +73,12 @@
     <mass value="0.0946935065934851"/>
     <inertia ixx="6.8e-05" iyy="4e-05" izz="4e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
   </inertial>
-  <visual>
+  <visual name="visual_0">
     <origin xyz="-0.665 -0.057642 -0.017023" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find sim_description)/meshes/Wheels_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find sim_description)/meshes/__visual__Wheels_1_594b391ede_0.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="fusion_Nylon_12__with_Formlabs_Fuse_1_3D_Printer__9b6938a61d"/>
   </visual>
   <collision>
     <origin xyz="-0.665 -0.057642 -0.017023" rpy="0 0 0"/>
@@ -94,12 +94,12 @@
     <mass value="0.0946935065934851"/>
     <inertia ixx="6.8e-05" iyy="4e-05" izz="4e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
   </inertial>
-  <visual>
+  <visual name="visual_0">
     <origin xyz="-0.415 0.042358 -0.017023" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find sim_description)/meshes/Wheels3_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find sim_description)/meshes/__visual__Wheels3_1_788b86b6ca_0.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="fusion_Nylon_12__with_Formlabs_Fuse_1_3D_Printer__9b6938a61d"/>
   </visual>
   <collision>
     <origin xyz="-0.415 0.042358 -0.017023" rpy="0 0 0"/>
@@ -115,12 +115,12 @@
     <mass value="0.0946935065934851"/>
     <inertia ixx="6.8e-05" iyy="4e-05" izz="4e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
   </inertial>
-  <visual>
+  <visual name="visual_0">
     <origin xyz="-0.415 -0.057642 -0.017023" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find sim_description)/meshes/Wheels4_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find sim_description)/meshes/__visual__Wheels4_1_2e6ca671c6_0.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="fusion_Nylon_12__with_Formlabs_Fuse_1_3D_Printer__9b6938a61d"/>
   </visual>
   <collision>
     <origin xyz="-0.415 -0.057642 -0.017023" rpy="0 0 0"/>
@@ -136,12 +136,12 @@
     <mass value="0.037869332750711956"/>
     <inertia ixx="9.8e-05" iyy="3.1e-05" izz="6.8e-05" ixy="-0.0" iyz="-3.6e-05" ixz="0.0"/>
   </inertial>
-  <visual>
+  <visual name="visual_0">
     <origin xyz="-0.158 0.052358 -0.109854" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find sim_description)/meshes/Simple-Hand2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find sim_description)/meshes/__visual__Simple-Hand2_1_7b7cf8c415_0.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="fusion_Nylon_12__with_Formlabs_Fuse_1_3D_Printer__9b6938a61d"/>
   </visual>
   <collision>
     <origin xyz="-0.158 0.052358 -0.109854" rpy="0 0 0"/>
@@ -157,12 +157,12 @@
     <mass value="0.037869332750711956"/>
     <inertia ixx="9.8e-05" iyy="3.1e-05" izz="6.8e-05" ixy="0.0" iyz="-3.6e-05" ixz="-0.0"/>
   </inertial>
-  <visual>
+  <visual name="visual_0">
     <origin xyz="-0.382 0.052358 -0.109854" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find sim_description)/meshes/Simple-Hand_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find sim_description)/meshes/__visual__Simple-Hand_1_5e8c8bbd99_0.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="fusion_Nylon_12__with_Formlabs_Fuse_1_3D_Printer__9b6938a61d"/>
   </visual>
   <collision>
     <origin xyz="-0.382 0.052358 -0.109854" rpy="0 0 0"/>
@@ -178,12 +178,12 @@
     <mass value="0.07029321520135141"/>
     <inertia ixx="0.000123" iyy="0.000121" izz="6e-06" ixy="0.0" iyz="-0.0" ixz="0.0"/>
   </inertial>
-  <visual>
+  <visual name="visual_0">
     <origin xyz="-0.27 0.007358 -0.2" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find sim_description)/meshes/Neck_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find sim_description)/meshes/__visual__Neck_1_34c932d70d_0.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="fusion_Nylon_12__with_Formlabs_Fuse_1_3D_Printer__9b6938a61d"/>
   </visual>
   <collision>
     <origin xyz="-0.27 0.007358 -0.2" rpy="0 0 0"/>
@@ -199,12 +199,12 @@
     <mass value="0.736870529138454"/>
     <inertia ixx="0.000921" iyy="0.001304" izz="0.001096" ixy="-4e-06" iyz="-2e-06" ixz="-0.000273"/>
   </inertial>
-  <visual>
+  <visual name="visual_0">
     <origin xyz="-0.27 -0.007642 -0.349854" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find sim_description)/meshes/Eye-Piece_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find sim_description)/meshes/__visual__Eye-Piece_1_6ef455a09f_0.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="fusion_Nylon_12__with_Formlabs_Fuse_1_3D_Printer__9b6938a61d"/>
   </visual>
   <collision>
     <origin xyz="-0.27 -0.007642 -0.349854" rpy="0 0 0"/>
@@ -220,12 +220,12 @@
     <mass value="0.7346504973882518"/>
     <inertia ixx="0.000916" iyy="0.001291" izz="0.001087" ixy="-0.0" iyz="-0.0" ixz="0.000267"/>
   </inertial>
-  <visual>
+  <visual name="visual_0">
     <origin xyz="-0.27 0.002358 -0.349854" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find sim_description)/meshes/Eye-Piece_other_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find sim_description)/meshes/__visual__Eye-Piece_other_1_aa47e234cb_0.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="fusion_Nylon_12__with_Formlabs_Fuse_1_3D_Printer__9b6938a61d"/>
   </visual>
   <collision>
     <origin xyz="-0.27 0.002358 -0.349854" rpy="0 0 0"/>
@@ -237,16 +237,16 @@
 
 <link name="eye_CAM_1">
   <inertial>
-    <origin xyz="-2.8683158786846352e-05 -0.002358818871701897 -0.00010604032573846567" rpy="0 0 0"/>
+    <origin xyz="-2.8683158786846352e-05 -0.00235881887170189 -0.0001060403257386322" rpy="0 0 0"/>
     <mass value="0.0026282548716325452"/>
     <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
   </inertial>
-  <visual>
+  <visual name="visual_0">
     <origin xyz="-0.342218 0.032358 -0.302551" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find sim_description)/meshes/eye_CAM_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find sim_description)/meshes/__visual__eye_CAM_1_5a890c16d0_0.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="fusion_Plastic___Glossy__Black__e2e6ed1680"/>
   </visual>
   <collision>
     <origin xyz="-0.342218 0.032358 -0.302551" rpy="0 0 0"/>
@@ -262,12 +262,12 @@
     <mass value="0.004710000140368951"/>
     <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="0.0"/>
   </inertial>
-  <visual>
+  <visual name="visual_0">
     <origin xyz="-0.27 0.11 -0.21" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find sim_description)/meshes/motion_IMU_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find sim_description)/meshes/__visual__motion_IMU_1_9386f0f59d_0.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="fusion_Steel___Satin_7dcf9b04aa"/>
   </visual>
   <collision>
     <origin xyz="-0.27 0.11 -0.21" rpy="0 0 0"/>
@@ -351,20 +351,16 @@
   <limit upper="0.523599" lower="0.523599" effort="100" velocity="100"/>
 </joint>
 
-<joint name="Revolute 34" type="revolute">
+<joint name="Rigid 34" type="fixed">
   <origin xyz="0.072218 -0.03 -0.047303" rpy="0 0 0"/>
   <parent link="Eye-Piece_other_1"/>
   <child link="eye_CAM_1"/>
-  <axis xyz="0.0 -1.0 0.0"/>
-  <limit upper="0.0" lower="0.0" effort="100" velocity="100"/>
 </joint>
 
-<joint name="Revolute 35" type="revolute">
+<joint name="Rigid 35" type="fixed">
   <origin xyz="0.27 -0.11 0.21" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="motion_IMU_1"/>
-  <axis xyz="0.0 0.0 1.0"/>
-  <limit upper="0.0" lower="0.0" effort="100" velocity="100"/>
 </joint>
 
 </robot>

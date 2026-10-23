@@ -16,6 +16,7 @@ def generate_launch_description():
     package_name='sim_description'
     robot_name='sim'
     share_dir = get_package_share_directory(package_name)
+    world_file = os.path.join(share_dir, 'worlds', 'first_world.sdf')
     xacro_file = os.path.join(share_dir, 'urdf', f"{robot_name}.xacro")
 
     robot_description_config = xacro.process_file(xacro_file)
@@ -51,7 +52,7 @@ def generate_launch_description():
                 'gz_sim.launch.py'
             ])
         ]),
-        launch_arguments={'gz_args': '-r --verbose','use_sim_time': 'True'}.items()
+        launch_arguments={'gz_args': f'-r -v 3 "{world_file}"'}.items()
     )
 
     # Spawn entity in Gazebo Sim
