@@ -1,0 +1,108 @@
+<?xml version="1.0" ?>
+<robot name="sim" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<xacro:property name="yaml_file" value="$(find sim_description)/config/sensor_parameters.yaml" />
+<xacro:property name="params_dict" value="${xacro.load_yaml(yaml_file)}" />
+<xacro:property name="L2D_params" value="${params_dict['L2D']}" />
+<xacro:property name="L3D_params" value="${params_dict['L3D']}" />
+<xacro:property name="DCAM_params" value="${params_dict['DCAM']}" />
+<xacro:property name="CAM_params" value="${params_dict['CAM']}" />
+<xacro:property name="IMU_params" value="${params_dict['IMU']}" />
+<xacro:property name="GPS_params" value="${params_dict['GPS']}" />
+<xacro:property name="P3D_params" value="${params_dict['P3D']}" />
+<gazebo reference="eye_CAM_1">
+  <sensor name="eye_CAM" type="camera">
+    <always_on>${CAM_params['eye_CAM']['always_on']}</always_on>
+    <update_rate>${CAM_params['eye_CAM']['update_rate']}</update_rate>
+    <pose>${CAM_params['eye_CAM']['pose']}</pose>
+    <topic>${CAM_params['eye_CAM']['image_topic']}</topic>
+    <gz_frame_id>${CAM_params['eye_CAM']['frame_name']}</gz_frame_id>
+    <camera name="eye_CAM">
+      <horizontal_fov>${CAM_params['eye_CAM']['horizontal_fov']}</horizontal_fov>
+      <camera_info_topic>${CAM_params['eye_CAM']['info_topic']}</camera_info_topic>
+      <lens>
+        <intrinsics>
+          <fx>${CAM_params['eye_CAM']['intrinsics']['fx']}</fx>
+          <fy>${CAM_params['eye_CAM']['intrinsics']['fy']}</fy>
+          <cx>${CAM_params['eye_CAM']['intrinsics']['cx']}</cx>
+          <cy>${CAM_params['eye_CAM']['intrinsics']['cy']}</cy>
+          <s>${CAM_params['eye_CAM']['intrinsics']['s']}</s>
+        </intrinsics>
+      </lens>
+      <distortion>
+        <k1>${CAM_params['eye_CAM']['distortion']['k1']}</k1>
+        <k2>${CAM_params['eye_CAM']['distortion']['k2']}</k2>
+        <k3>${CAM_params['eye_CAM']['distortion']['k3']}</k3>
+        <p1>${CAM_params['eye_CAM']['distortion']['p1']}</p1>
+        <p2>${CAM_params['eye_CAM']['distortion']['p2']}</p2>
+      </distortion>
+      <image>
+        <width>${CAM_params['eye_CAM']['image']['width']}</width>
+        <height>${CAM_params['eye_CAM']['image']['height']}</height>
+        <format>${CAM_params['eye_CAM']['image']['format']}</format>
+      </image>
+      <clip>
+        <near>${CAM_params['eye_CAM']['clip']['near']}</near>
+        <far>${CAM_params['eye_CAM']['clip']['far']}</far>
+      </clip>
+      <noise>
+        <type>${CAM_params['eye_CAM']['noise']['type']}</type>
+        <mean>${CAM_params['eye_CAM']['noise']['mean']}</mean>
+        <stddev>${CAM_params['eye_CAM']['noise']['stddev']}</stddev>
+      </noise>
+    </camera>
+  </sensor>
+</gazebo>
+
+<gazebo reference="motion_IMU_1">
+  <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"/>
+  <sensor name="motion_IMU" type="imu">
+    <always_on>${IMU_params['motion_IMU']['always_on']}</always_on>
+    <update_rate>${IMU_params['motion_IMU']['update_rate']}</update_rate>
+    <topic>${IMU_params['motion_IMU']['topic']}</topic>
+    <imu>
+      <angular_velocity>
+        <x>
+          <noise type="gaussian">
+            <mean>${IMU_params['motion_IMU']['angular_velocity']['x']['noise']['mean']}</mean>
+            <stddev>${IMU_params['motion_IMU']['angular_velocity']['x']['noise']['stddev']}</stddev>
+          </noise>
+        </x>
+        <y>
+          <noise type="gaussian">
+            <mean>${IMU_params['motion_IMU']['angular_velocity']['y']['noise']['mean']}</mean>
+            <stddev>${IMU_params['motion_IMU']['angular_velocity']['y']['noise']['stddev']}</stddev>
+          </noise>
+        </y>
+        <z>
+          <noise type="gaussian">
+            <mean>${IMU_params['motion_IMU']['angular_velocity']['z']['noise']['mean']}</mean>
+            <stddev>${IMU_params['motion_IMU']['angular_velocity']['z']['noise']['stddev']}</stddev>
+          </noise>
+        </z>
+      </angular_velocity>
+      <linear_acceleration>
+        <x>
+          <noise type="gaussian">
+            <mean>${IMU_params['motion_IMU']['linear_acceleration']['x']['noise']['mean']}</mean>
+            <stddev>${IMU_params['motion_IMU']['linear_acceleration']['x']['noise']['stddev']}</stddev>
+          </noise>
+        </x>
+        <y>
+          <noise type="gaussian">
+            <mean>${IMU_params['motion_IMU']['linear_acceleration']['y']['noise']['mean']}</mean>
+            <stddev>${IMU_params['motion_IMU']['linear_acceleration']['y']['noise']['stddev']}</stddev>
+          </noise>
+        </y>
+        <z>
+          <noise type="gaussian">
+            <mean>${IMU_params['motion_IMU']['linear_acceleration']['z']['noise']['mean']}</mean>
+            <stddev>${IMU_params['motion_IMU']['linear_acceleration']['z']['noise']['stddev']}</stddev>
+          </noise>
+        </z>
+      </linear_acceleration>
+    </imu>
+  </sensor>
+</gazebo>
+
+</robot>
