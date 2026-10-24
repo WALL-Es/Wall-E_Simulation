@@ -5,11 +5,11 @@ joint_trajectory_controller:
   ros__parameters:
     type: joint_trajectory_controller/JointTrajectoryController
     joints:
-      - Revolute 27
-      - Revolute 28
-      - Revolute 29
-      - Revolute 32
-      - Revolute 33
+      - LH
+      - RH
+      - Ne
+      - Le
+      - Re
     command_interfaces:
       - position
       - velocity

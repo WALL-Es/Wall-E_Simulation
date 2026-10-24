@@ -17,34 +17,26 @@
 </gazebo>
 
 <gazebo reference="Wheel2_1">
-  <mu1>1.0</mu1>
-  <mu2>1.0</mu2>
-  <minDepth>0.001</minDepth>
-  <maxVel>0.1</maxVel>
+  <mu1>1.5</mu1>
+  <mu2>1.5</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="Wheels_1">
-  <mu1>1.0</mu1>
-  <mu2>1.0</mu2>
-  <minDepth>0.001</minDepth>
-  <maxVel>0.1</maxVel>
+  <mu1>1.5</mu1>
+  <mu2>1.5</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="Wheels3_1">
-  <mu1>1.0</mu1>
-  <mu2>1.0</mu2>
-  <minDepth>0.001</minDepth>
-  <maxVel>0.1</maxVel>
+  <mu1>1.5</mu1>
+  <mu2>1.5</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="Wheels4_1">
-  <mu1>1.0</mu1>
-  <mu2>1.0</mu2>
-  <minDepth>0.001</minDepth>
-  <maxVel>0.1</maxVel>
+  <mu1>1.5</mu1>
+  <mu2>1.5</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
@@ -94,27 +86,31 @@
 <hardware>
    <plugin>gz_ros2_control/GazeboSimSystem</plugin>
 </hardware>
-<joint name="Revolute 8">
+<joint name="RF_Whe">
    <state_interface name="position"/>
    <state_interface name="velocity"/>
+   <command_interface name="velocity"/>
 </joint>
 
-<joint name="Revolute 9">
+<joint name="RB_Whe">
    <state_interface name="position"/>
    <state_interface name="velocity"/>
+   <command_interface name="velocity"/>
 </joint>
 
-<joint name="Revolute 10">
+<joint name="LF_Whe">
    <state_interface name="position"/>
    <state_interface name="velocity"/>
+   <command_interface name="velocity"/>
 </joint>
 
-<joint name="Revolute 11">
+<joint name="LB_Whe">
    <state_interface name="position"/>
    <state_interface name="velocity"/>
+   <command_interface name="velocity"/>
 </joint>
 
-<joint name="Revolute 27">
+<joint name="LH">
   <command_interface name="position">
     <param name="min">-0.436332</param>
     <param name="max">1.570796</param>
@@ -132,7 +128,7 @@
   <state_interface name="effort"/>
 </joint>
 
-<joint name="Revolute 28">
+<joint name="RH">
   <command_interface name="position">
     <param name="min">-1.570796</param>
     <param name="max">0.523599</param>
@@ -150,7 +146,7 @@
   <state_interface name="effort"/>
 </joint>
 
-<joint name="Revolute 29">
+<joint name="Ne">
   <command_interface name="position">
     <param name="min">-0.698132</param>
     <param name="max">0.698132</param>
@@ -168,7 +164,7 @@
   <state_interface name="effort"/>
 </joint>
 
-<joint name="Revolute 32">
+<joint name="Le">
   <command_interface name="position">
     <param name="min">0.261799</param>
     <param name="max">0.261799</param>
@@ -186,7 +182,7 @@
   <state_interface name="effort"/>
 </joint>
 
-<joint name="Revolute 33">
+<joint name="Re">
   <command_interface name="position">
     <param name="min">0.523599</param>
     <param name="max">0.523599</param>
@@ -214,21 +210,16 @@
 </plugin>
 <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"/>
 
+<plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
+<left_joint>LF_Whe</left_joint>
+<left_joint>LB_Whe</left_joint>
+<right_joint>RF_Whe</right_joint>
+<right_joint>RB_Whe</right_joint>
 
-  <plugin name="diff_drive" filename="libgazebo_ros_diff_drive.so">
-    <update_rate>50</update_rate>
-    <left_joint>left_wheel_joint</left_joint>
-    <right_joint>right_wheel_joint</right_joint>
-    <wheel_separation>0.4</wheel_separation>
-    <wheel_diameter>0.2</wheel_diameter>
-    <max_wheel_torque>20</max_wheel_torque>
-    <max_wheel_acceleration>1.0</max_wheel_acceleration>
-    <publish_odom>true</publish_odom>
-    <publish_odom_tf>true</publish_odom_tf>
-    <publish_wheel_tf>true</publish_wheel_tf>
-    <odometry_frame>odom</odometry_frame>
-    <robot_base_frame>base_link</robot_base_frame>
-  </plugin>
+<wheel_separation>0.25</wheel_separation>
+<wheel_radius>0.001</wheel_radius>
 
+<topic>/cmd_vel</topic>
+</plugin>
 </gazebo>
 </robot>
