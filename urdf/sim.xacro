@@ -6,7 +6,7 @@
 <xacro:include filename="$(find sim_description)/urdf/sim.gazebo" />
 <link name="base_link">
   <inertial>
-    <origin xyz="0 0.007854232303995057 0.12120278975860416" rpy="0 0 0"/>
+    <origin xyz="0 0.007854232303995057 0.12120278975860416" rpy="-0.3 0 0"/>
     <mass value="3.1148330063772516"/>
     <inertia ixx="0.032507" iyy="0.034335" izz="0.029521" ixy="-0.0" iyz="0.001867" ixz="0.0"/>
   </inertial>
@@ -352,7 +352,7 @@
 </joint>
 
 <joint name="Rigid 34" type="fixed">
-  <origin xyz="0.07338 -0.03 -0.047303" rpy="0 0 0"/>
+  <origin xyz="0.07338 -0.03 -0.047303" rpy="0.3 -0.1 -83.2"/>
   <parent link="Eye-Piece_other_1"/>
   <child link="eye_CAM_1"/>
 </joint>
