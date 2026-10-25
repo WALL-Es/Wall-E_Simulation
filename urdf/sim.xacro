@@ -6,19 +6,19 @@
 <xacro:include filename="$(find sim_description)/urdf/sim.gazebo" />
 <link name="base_link">
   <inertial>
-    <origin xyz="0.26999999999943136 0.007854232303995057 0.12120278975860416" rpy="0 0 0"/>
+    <origin xyz="0 0.007854232303995057 0.12120278975860416" rpy="0 0 0"/>
     <mass value="3.1148330063772516"/>
     <inertia ixx="0.032507" iyy="0.034335" izz="0.029521" ixy="-0.0" iyz="0.001867" ixz="0.0"/>
   </inertial>
   <visual name="visual_0">
-    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <origin xyz="-0.27 0 0" rpy="0 0 0"/>
     <geometry>
       <mesh filename="file://$(find sim_description)/meshes/__visual__base_link_715a4d03a5_0.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="fusion_Paek__Beige__c3b53efd9f"/>
   </visual>
   <collision>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <origin xyz="-0.27 0 0" rpy="0 0 0"/>
     <geometry>
       <mesh filename="file://$(find sim_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -48,7 +48,7 @@
 
 <link name="Wheel2_1">
   <inertial>
-    <origin xyz="-0.2780000000000001 -3.4358904910797294e-07 -2.882384547153727e-07" rpy="0 0 0"/>
+    <origin xyz="0 -3.4358904910797294e-07 -2.882384547153727e-07" rpy="0 0 0"/>
     <mass value="0.0946935065934851"/>
     <inertia ixx="6.8e-05" iyy="4e-05" izz="4e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
   </inertial>
@@ -69,7 +69,7 @@
 
 <link name="Wheels_1">
   <inertial>
-    <origin xyz="-0.2780000000000001 -3.4358904910103405e-07 -2.882384547153727e-07" rpy="0 0 0"/>
+    <origin xyz="0 -3.4358904910103405e-07 -2.882384547153727e-07" rpy="0 0 0"/>
     <mass value="0.0946935065934851"/>
     <inertia ixx="6.8e-05" iyy="4e-05" izz="4e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
   </inertial>
@@ -90,7 +90,7 @@
 
 <link name="Wheels3_1">
   <inertial>
-    <origin xyz="-0.262 -3.4358904910797294e-07 -2.882384547153727e-07" rpy="0 0 0"/>
+    <origin xyz="0 -3.4358904910797294e-07 -2.882384547153727e-07" rpy="0 0 0"/>
     <mass value="0.0946935065934851"/>
     <inertia ixx="6.8e-05" iyy="4e-05" izz="4e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
   </inertial>
@@ -111,7 +111,7 @@
 
 <link name="Wheels4_1">
   <inertial>
-    <origin xyz="-0.262 -3.4358904910103405e-07 -2.882384547153727e-07" rpy="0 0 0"/>
+    <origin xyz="0 -3.4358904910103405e-07 -2.882384547153727e-07" rpy="0 0 0"/>
     <mass value="0.0946935065934851"/>
     <inertia ixx="6.8e-05" iyy="4e-05" izz="4e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
   </inertial>
@@ -278,41 +278,41 @@
 </link>
 
 <joint name="Rigid 5" type="fixed">
-  <origin xyz="0.0 -0.005 0.0" rpy="0 0 0"/>
+  <origin xyz="0 -0.005 0.0" rpy="0 0 0"/>
   <parent link="Neck_1"/>
   <child link="Button_Head_Small_Solid_Rivet_ASME_B18.1.1_-_3/8_x_1_1/4_Steel_Plain_1"/>
 </joint>
 
 <joint name="RF_Whe" type="continuous">
-  <origin xyz="0.39 -0.042358 0.017023" rpy="0 0 0"/>
+  <origin xyz="0.12 -0.042358 0.017023" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="Wheel2_1"/>
   <axis xyz="1.0 0.0 0.0"/>
 </joint>
 
 <joint name="RB_Whe" type="continuous">
-  <origin xyz="0.39 0.057642 0.017023" rpy="0 0 0"/>
+  <origin xyz="0.12 0.057642 0.017023" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="Wheels_1"/>
   <axis xyz="1.0 0.0 0.0"/>
 </joint>
 
 <joint name="LF_Whe" type="continuous">
-  <origin xyz="0.143432 -0.042358 0.017023" rpy="0 0 0"/>
+  <origin xyz="-0.127 -0.042358 0.017023" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="Wheels3_1"/>
   <axis xyz="-1.0 0.0 0.0"/>
 </joint>
 
 <joint name="LB_Whe" type="continuous">
-  <origin xyz="0.143432 0.057642 0.017023" rpy="0 0 0"/>
+  <origin xyz="-0.127 0.057642 0.017023" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="Wheels4_1"/>
   <axis xyz="-1.0 0.0 0.0"/>
 </joint>
 
 <joint name="LH" type="revolute">
-  <origin xyz="0.158 -0.052358 0.109854" rpy="0 0 0"/>
+  <origin xyz="-0.112 -0.052358 0.109854" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="Simple-Hand2_1"/>
   <axis xyz="-1.0 0.0 0.0"/>
@@ -320,7 +320,7 @@
 </joint>
 
 <joint name="RH" type="revolute">
-  <origin xyz="0.382 -0.052358 0.109854" rpy="0 0 0"/>
+  <origin xyz="0.112 -0.052358 0.109854" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="Simple-Hand_1"/>
   <axis xyz="1.0 0.0 0.0"/>
@@ -328,7 +328,7 @@
 </joint>
 
 <joint name="Ne" type="revolute">
-  <origin xyz="0.27 -0.007358 0.2" rpy="0 0 0"/>
+  <origin xyz="0 -0.007358 0.2" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="Neck_1"/>
   <axis xyz="0.0 -1.0 0.0"/>
@@ -336,7 +336,7 @@
 </joint>
 
 <joint name="Le" type="revolute">
-  <origin xyz="0.0 0.015 0.149854" rpy="0 0 0"/>
+  <origin xyz="0 0.015 0.149854" rpy="0 0 0"/>
   <parent link="Neck_1"/>
   <child link="Eye-Piece_1"/>
   <axis xyz="0.0 -1.0 0.0"/>
@@ -344,7 +344,7 @@
 </joint>
 
 <joint name="Re" type="revolute">
-  <origin xyz="0.0 -0.01 0.0" rpy="0 0 0"/>
+  <origin xyz="0 -0.01 0.0" rpy="0 0 0"/>
   <parent link="Eye-Piece_1"/>
   <child link="Eye-Piece_other_1"/>
   <axis xyz="0.0 1.0 0.0"/>
@@ -352,13 +352,13 @@
 </joint>
 
 <joint name="Rigid 34" type="fixed">
-  <origin xyz="0.072218 -0.03 -0.047303" rpy="0 0 0"/>
+  <origin xyz="0.07338 -0.03 -0.047303" rpy="0 0 0"/>
   <parent link="Eye-Piece_other_1"/>
   <child link="eye_CAM_1"/>
 </joint>
 
 <joint name="Rigid 35" type="fixed">
-  <origin xyz="0.27 -0.11 0.21" rpy="0 0 0"/>
+  <origin xyz="0 -0.11 0.21" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="motion_IMU_1"/>
 </joint>
