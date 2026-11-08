@@ -19,7 +19,9 @@
     <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
       <render_engine>ogre2</render_engine>
     </plugin>
-
+    <plugin filename="Teleop" name="Teleop" >
+      <topic>/cmd_vel</topic>
+    </plugin>   
 
   
     <include>

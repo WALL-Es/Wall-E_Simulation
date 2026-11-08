@@ -1,50 +1,94 @@
-<sdf version="1.12">
-  <model name="wall-e_full">
-    <link name="base_link">
+<sdf version='1.12'>
+  <model name='wall-e_full'>
+    <link name='base_link'>
       <inertial>
-        <pose>0.00072424999999999996 0.015854 -0.025798999999999999 0 0 0</pose>
-        <mass>11</mass>
+        <pose>-7.5738220953898907e-05 0.015819953570941139 -0.02630656919851446 0 0 0</pose>
+        <mass>5</mass>
         <inertia>
-          <ixx>0.0025114</ixx>
-          <ixy>-2.7531000000000001e-05</ixy>
-          <ixz>-3.5024999999999999e-06</ixz>
-          <iyy>0.0022133999999999999</iyy>
-          <iyz>1.9811999999999999e-05</iyz>
-          <izz>0.0026656000000000002</izz>
+          <ixx>0.0030647654796784052</ixx>
+          <ixy>-7.7855118736839147e-05</ixy>
+          <ixz>-0.00074963675433502601</ixz>
+          <iyy>0.0039048416969432488</iyy>
+          <iyz>-2.1491483193991981e-06</iyz>
+          <izz>0.0038838739918030068</izz>
         </inertia>
       </inertial>
-      <collision name="base_link_collision">
+      <collision name='base_link_collision'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/base_link.STL</uri>
+            <uri>model://wall-e_full/meshes/visual/base_link.STL</uri>
           </mesh>
         </geometry>
       </collision>
-      <visual name="base_link_visual">
+      <collision name='base_link_fixed_joint_lump__Lwheels_collision_1'>
+        <pose>-0.12341585191344701 0.041946724222818602 -0.12513000874771599 1.0756844201370701 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://wall-e_full/meshes/visual/Lwheels.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__Rwheels_collision_2'>
+        <pose>0.12411 0.041946999999999998 -0.12512999999999999 2.0659000000000001 8.4703294725430034e-22 -3.1415853071795872</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://wall-e_full/meshes/visual/Rwheels.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/base_link.STL</uri>
+            <uri>model://wall-e_full/meshes/visual/base_link.STL</uri>
           </mesh>
         </geometry>
         <material>
-          <diffuse>0.990199983 1 1 1</diffuse>
-          <ambient>0.990199983 1 1 1</ambient>
+          <diffuse>1 0.875 0.37500003 1</diffuse>
+          <ambient>1 0.875 0.37500003 1</ambient>
+        </material>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__Lwheels_visual_1'>
+        <pose>-0.12341585191344701 0.041946724222818602 -0.12513000874771599 1.0756844201370701 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://wall-e_full/meshes/visual/Lwheels.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.125 0.125 0.125 1</diffuse>
+          <ambient>0.125 0.125 0.125 1</ambient>
+        </material>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__Rwheels_visual_2'>
+        <pose>0.12411 0.041946999999999998 -0.12512999999999999 2.0659000000000001 8.4703294725430034e-22 -3.1415853071795872</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://wall-e_full/meshes/visual/Rwheels.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.125 0.125 0.125 1</diffuse>
+          <ambient>0.125 0.125 0.125 1</ambient>
         </material>
       </visual>
     </link>
-    <joint name="LhandJ" type="revolute">
-      <pose relative_to="base_link">-0.084220594429202406 -0.0091949728526117304 0.034111512845993897 2.0659082334527201 3.944304526105059e-31 -3.14159265358979</pose>
+    <joint name='LhandJ' type='revolute'>
+      <pose relative_to='base_link'>-0.084220594429202406 -0.0091949728526117304 0.034111512845993897 2.0659082334527201 3.944304526105059e-31 -3.14159265358979</pose>
       <parent>base_link</parent>
       <child>Lhand</child>
       <axis>
         <xyz>-1 0 0</xyz>
         <limit>
-          <lower>0</lower>
-          <upper>0</upper>
+          <lower>2.7999999999999998</lower>
+          <upper>4.7999999999999998</upper>
           <effort>2</effort>
           <velocity>0.10000000000000001</velocity>
         </limit>
@@ -54,8 +98,8 @@
         </dynamics>
       </axis>
     </joint>
-    <link name="Lhand">
-      <pose relative_to="LhandJ">0 0 0 0 0 0</pose>
+    <link name='Lhand'>
+      <pose relative_to='LhandJ'>0 0 0 0 0 0</pose>
       <inertial>
         <pose>0.0101270901152479 0.00027472155584229397 -0.00032533109677146399 0 0 0</pose>
         <mass>0.0037479201261180401</mass>
@@ -68,31 +112,31 @@
           <izz>5.9788812992238304e-07</izz>
         </inertia>
       </inertial>
-      <collision name="Lhand_collision">
+      <collision name='Lhand_collision'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/Lhand.STL</uri>
+            <uri>model://wall-e_full/meshes/visual/Lhand.STL</uri>
           </mesh>
         </geometry>
       </collision>
-      <visual name="Lhand_visual">
+      <visual name='Lhand_visual'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/Lhand.STL</uri>
+            <uri>model://wall-e_full/meshes/visual/Lhand.STL</uri>
           </mesh>
         </geometry>
         <material>
-          <diffuse>0.990196109 1 1 1</diffuse>
-          <ambient>0.990196109 1 1 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <ambient>0.5 0.5 0.5 1</ambient>
         </material>
       </visual>
     </link>
-    <joint name="LsholderJ" type="revolute">
-      <pose relative_to="Lhand">0.019248500175045102 0.011686793410703399 -0.00421067864858182 2.1870242489001201 0.088667609942043327 1.5707963267949003</pose>
+    <joint name='LsholderJ' type='revolute'>
+      <pose relative_to='Lhand'>0.019248500175045102 0.011686793410703399 -0.00421067864858182 2.1870242489001201 0.088667609942043327 1.5707963267949003</pose>
       <parent>Lhand</parent>
       <child>Lsholder</child>
       <axis>
@@ -109,8 +153,8 @@
         </dynamics>
       </axis>
     </joint>
-    <link name="Lsholder">
-      <pose relative_to="LsholderJ">0 0 0 0 0 0</pose>
+    <link name='Lsholder'>
+      <pose relative_to='LsholderJ'>0 0 0 0 0 0</pose>
       <inertial>
         <pose>-0.0120786593787262 0.019504739704024901 0.027180443988007199 0 0 0</pose>
         <mass>0.018292598974019199</mass>
@@ -123,31 +167,31 @@
           <izz>5.7068320117126303e-06</izz>
         </inertia>
       </inertial>
-      <collision name="Lsholder_collision">
+      <collision name='Lsholder_collision'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/Lsholder.STL</uri>
+            <uri>model://wall-e_full/meshes/visual/Lsholder.STL</uri>
           </mesh>
         </geometry>
       </collision>
-      <visual name="Lsholder_visual">
+      <visual name='Lsholder_visual'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/Lsholder.STL</uri>
+            <uri>model://wall-e_full/meshes/visual/Lsholder.STL</uri>
           </mesh>
         </geometry>
         <material>
-          <diffuse>0.990196109 1 1 1</diffuse>
-          <ambient>0.990196109 1 1 1</ambient>
+          <diffuse>1 0.875 0.37500003 1</diffuse>
+          <ambient>1 0.875 0.37500003 1</ambient>
         </material>
       </visual>
     </link>
-    <joint name="LarmJ" type="revolute">
-      <pose relative_to="Lsholder">0.0039930556847560502 0.054558015776312703 0.081553244229591204 2.13255459988495 0.10290417499243899 0.17307439959948095</pose>
+    <joint name='LarmJ' type='revolute'>
+      <pose relative_to='Lsholder'>0.0039930556847560502 0.054558015776312703 0.081553244229591204 2.13255459988495 0.10290417499243899 0.17307439959948095</pose>
       <parent>Lsholder</parent>
       <child>Larm</child>
       <axis>
@@ -164,8 +208,8 @@
         </dynamics>
       </axis>
     </joint>
-    <link name="Larm">
-      <pose relative_to="LarmJ">0 0 0 0 0 0</pose>
+    <link name='Larm'>
+      <pose relative_to='LarmJ'>0 0 0 0 0 0</pose>
       <inertial>
         <pose>-0.016497461280805498 -0.0089343697734882693 -0.0099058772112364801 0 0 0</pose>
         <mass>0.023369768666803101</mass>
@@ -178,85 +222,32 @@
           <izz>2.7007305270279001e-06</izz>
         </inertia>
       </inertial>
-      <collision name="Larm_collision">
+      <collision name='Larm_collision'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/Larm.STL</uri>
+            <uri>model://wall-e_full/meshes/visual/Larm.STL</uri>
           </mesh>
         </geometry>
       </collision>
-      <visual name="Larm_visual">
+      <visual name='Larm_visual'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/Larm.STL</uri>
+            <uri>model://wall-e_full/meshes/visual/Larm.STL</uri>
           </mesh>
         </geometry>
         <material>
-          <diffuse>0.990196109 1 1 1</diffuse>
-          <ambient>0.990196109 1 1 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <ambient>0.5 0.5 0.5 1</ambient>
         </material>
       </visual>
     </link>
-    <joint name="LwheelsFJ" type="fixed">
-      <pose relative_to="base_link">-0.12341585191344701 0.041946724222818602 -0.12513000874771599 1.0756844201370701 0 0</pose>
+    <joint name='LBwheelJ' type='revolute'>
+      <pose relative_to='base_link'>-0.15259504830756371 -0.029861589460161719 -0.1449925327678255 2.0659082334527201 2.8430855697611276e-15 -3.1415926535897918</pose>
       <parent>base_link</parent>
-      <child>Lwheels</child>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-      </axis>
-    </joint>
-    <link name="Lwheels">
-      <pose relative_to="LwheelsFJ">0 0 0 0 0 0</pose>
-      <inertial>
-        <pose>-0.0095379655853709 -0.0023275242052017702 0.034862444867759697 0 0 0</pose>
-        <mass>0.066225147731788794</mass>
-        <inertia>
-          <ixx>7.7691447979222903e-05</ixx>
-          <ixy>7.4602318720812198e-08</ixy>
-          <ixz>3.3604962119082498e-07</ixz>
-          <iyy>4.8386547332931298e-05</iyy>
-          <iyz>-6.1106372445980904e-06</iyz>
-          <izz>3.2955762937583402e-05</izz>
-        </inertia>
-      </inertial>
-      <collision name="Lwheels_collision">
-        <pose>0 0 0 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/Lwheels.STL</uri>
-          </mesh>
-        </geometry>
-      </collision>
-      <visual name="Lwheels_visual">
-        <pose>0 0 0 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/Lwheels.STL</uri>
-          </mesh>
-        </geometry>
-        <material>
-          <diffuse>0.990196109 1 1 1</diffuse>
-          <ambient>0.990196109 1 1 1</ambient>
-        </material>
-      </visual>
-    </link>
-    <joint name="LBwheelJ" type="revolute">
-      <pose relative_to="Lwheels">-0.029179196394116699 -0.051595636538395398 0.053747968004758298 3.14159265358979 0 -3.14159265358979</pose>
-      <parent>Lwheels</parent>
       <child>LBwheel</child>
       <axis>
         <xyz>-1 0 0</xyz>
@@ -274,8 +265,8 @@
         </dynamics>
       </axis>
     </joint>
-    <link name="LBwheel">
-      <pose relative_to="LBwheelJ">0 0 0 0 0 0</pose>
+    <link name='LBwheel'>
+      <pose relative_to='LBwheelJ'>0 0 0 0 0 0</pose>
       <inertial>
         <pose>-0.027072415343938599 1.44468253258645e-05 -1.22723972382222e-05 0 0 0</pose>
         <mass>0.071677128466878196</mass>
@@ -288,32 +279,32 @@
           <izz>1.6194287036227998e-05</izz>
         </inertia>
       </inertial>
-      <collision name="LBwheel_collision">
+      <collision name='LBwheel_collision'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/LBwheel.STL</uri>
+            <uri>model://wall-e_full/meshes/visual/LBwheel.STL</uri>
           </mesh>
         </geometry>
       </collision>
-      <visual name="LBwheel_visual">
+      <visual name='LBwheel_visual'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/LBwheel.STL</uri>
+            <uri>model://wall-e_full/meshes/visual/LBwheel.STL</uri>
           </mesh>
         </geometry>
         <material>
-          <diffuse>0.990196109 1 1 1</diffuse>
-          <ambient>0.990196109 1 1 1</ambient>
+          <diffuse>0.125 0.125 0.125 1</diffuse>
+          <ambient>0.125 0.125 0.125 1</ambient>
         </material>
       </visual>
     </link>
-    <joint name="LFwheelJ" type="revolute">
-      <pose relative_to="Lwheels">-0.031300000000000001 0.014447 -0.021340999999999999 -3.1415853071795872 0 3.1415853071795872</pose>
-      <parent>Lwheels</parent>
+    <joint name='LFwheelJ' type='revolute'>
+      <pose relative_to='base_link'>-0.154715851913447 0.067589206753241746 -0.1225576208148909 2.0659155798742108 -6.4642205417128398e-06 3.14158916308901</pose>
+      <parent>base_link</parent>
       <child>LFwheel</child>
       <axis>
         <xyz>-1 0 0</xyz>
@@ -331,8 +322,8 @@
         </dynamics>
       </axis>
     </joint>
-    <link name="LFwheel">
-      <pose relative_to="LFwheelJ">0 0 0 0 0 0</pose>
+    <link name='LFwheel'>
+      <pose relative_to='LFwheelJ'>0 0 0 0 0 0</pose>
       <inertial>
         <pose>-0.0265000000000001 2.8043853664283499e-06 -3.7764496516601298e-06 0 0 0</pose>
         <mass>0.022661635178307701</mass>
@@ -345,31 +336,31 @@
           <izz>2.6114956527733299e-06</izz>
         </inertia>
       </inertial>
-      <collision name="LFwheel_collision">
+      <collision name='LFwheel_collision'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/LFwheel.STL</uri>
+            <uri>model://wall-e_full/meshes/visual/LFwheel.STL</uri>
           </mesh>
         </geometry>
       </collision>
-      <visual name="LFwheel_visual">
+      <visual name='LFwheel_visual'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/LFwheel.STL</uri>
+            <uri>model://wall-e_full/meshes/visual/LFwheel.STL</uri>
           </mesh>
         </geometry>
         <material>
-          <diffuse>0.990196109 1 1 1</diffuse>
-          <ambient>0.990196109 1 1 1</ambient>
+          <diffuse>0.125 0.125 0.125 1</diffuse>
+          <ambient>0.125 0.125 0.125 1</ambient>
         </material>
       </visual>
     </link>
-    <joint name="NeckJ" type="revolute">
-      <pose relative_to="base_link">-0.020580225088795999 -0.0060001626759933497 0.067267840291683798 2.0659082334527201 -3.944304526105059e-31 3.14159265358979</pose>
+    <joint name='NeckJ' type='revolute'>
+      <pose relative_to='base_link'>-0.020580225088795999 -0.0060001626759933497 0.067267840291683798 2.0659082334527201 -3.944304526105059e-31 3.14159265358979</pose>
       <parent>base_link</parent>
       <child>Neck</child>
       <axis>
@@ -386,8 +377,8 @@
         </dynamics>
       </axis>
     </joint>
-    <link name="Neck">
-      <pose relative_to="NeckJ">0 0 0 0 0 0</pose>
+    <link name='Neck'>
+      <pose relative_to='NeckJ'>0 0 0 0 0 0</pose>
       <inertial>
         <pose>-0.018986760150549599 0.018279574840958001 -0.00910763273032833 0 0 0</pose>
         <mass>0.055631749180625002</mass>
@@ -400,31 +391,31 @@
           <izz>3.4712346661997098e-05</izz>
         </inertia>
       </inertial>
-      <collision name="Neck_collision">
+      <collision name='Neck_collision'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/Neck.STL</uri>
+            <uri>model://wall-e_full/meshes/visual/Neck.STL</uri>
           </mesh>
         </geometry>
       </collision>
-      <visual name="Neck_visual">
+      <visual name='Neck_visual'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/Neck.STL</uri>
+            <uri>model://wall-e_full/meshes/visual/Neck.STL</uri>
           </mesh>
         </geometry>
         <material>
-          <diffuse>0.990196109 1 1 1</diffuse>
-          <ambient>0.990196109 1 1 1</ambient>
+          <diffuse>1 0.875 0.37500003 1</diffuse>
+          <ambient>1 0.875 0.37500003 1</ambient>
         </material>
       </visual>
     </link>
-    <joint name="HeadJ" type="revolute">
-      <pose relative_to="Neck">-0.0039999999999999498 0.0570795849650889 -0.032619015530530801 0 0 0</pose>
+    <joint name='HeadJ' type='revolute'>
+      <pose relative_to='Neck'>-0.0039999999999999498 0.0570795849650889 -0.032619015530530801 0 0 0</pose>
       <parent>Neck</parent>
       <child>Head</child>
       <axis>
@@ -441,105 +432,74 @@
         </dynamics>
       </axis>
     </joint>
-    <link name="Head">
-      <pose relative_to="HeadJ">0 0 0 0 0 0</pose>
+    <link name='Head'>
+      <pose relative_to='HeadJ'>0 0 0 0 0 0</pose>
       <inertial>
-        <pose>-0.014974584611236 -0.016714396816173399 -0.0184525950146903 0 0 0</pose>
-        <mass>0.023620134715717001</mass>
+        <pose>-0.01527910023652203 -0.0020566843840113379 -0.043918112992403807 0 0 0</pose>
+        <mass>0.056054652665563101</mass>
         <inertia>
-          <ixx>7.9389477789077794e-06</ixx>
-          <ixy>-7.45668922195381e-10</ixy>
-          <ixz>-1.5264585749400799e-09</ixz>
-          <iyy>6.2291482727748098e-06</iyy>
-          <iyz>-1.6723102904358401e-06</iyz>
-          <izz>3.5174734967393299e-06</izz>
+          <ixx>6.6239903305471073e-05</ixx>
+          <ixy>1.8152735812743871e-07</ixy>
+          <ixz>-3.1810945131102378e-07</ixz>
+          <iyy>4.1819195684434267e-05</iyy>
+          <iyz>4.9558190067264449e-06</iyz>
+          <izz>2.8651158970328641e-05</izz>
         </inertia>
       </inertial>
-      <collision name="Head_collision">
+      <collision name='Head_collision'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/Head.STL</uri>
+            <uri>model://wall-e_full/meshes/visual/Head.STL</uri>
           </mesh>
         </geometry>
       </collision>
-      <visual name="Head_visual">
-        <pose>0 0 0 0 0 0</pose>
+      <collision name='Head_fixed_joint_lump__EyesH_collision_1'>
+        <pose>-0.015500953405852801 -0.0141028247914159 -0.072607146959166896 -1.4614091857552303 0.60777228377216397 -1.5707963267949003</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/Head.STL</uri>
-          </mesh>
-        </geometry>
-        <material>
-          <diffuse>0.990196109 1 1 1</diffuse>
-          <ambient>0.990196109 1 1 1</ambient>
-        </material>
-      </visual>
-    </link>
-    <joint name="EyesHJ" type="fixed">
-      <pose relative_to="Head">-0.015500953405852801 -0.0141028247914159 -0.072607146959166896 -1.4614091857552303 0.60777228377216397 -1.5707963267949003</pose>
-      <parent>Head</parent>
-      <child>EyesH</child>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <lower>-inf</lower>
-          <upper>inf</upper>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-      </axis>
-    </joint>
-    <link name="EyesH">
-      <pose relative_to="EyesHJ">0 0 0 0 0 0</pose>
-      <inertial>
-        <pose>-0.024444383358099099 0.0046191018704318 -0.00050720225288702903 0 0 0</pose>
-        <mass>0.032434517949846101</mass>
-        <inertia>
-          <ixx>3.40512588039258e-06</ixx>
-          <ixy>3.9969048506651598e-07</ixy>
-          <ixz>-4.3935393633157802e-08</ixz>
-          <iyy>2.20801594799036e-05</iyy>
-          <iyz>1.07482863983871e-07</iyz>
-          <izz>2.3046456435567601e-05</izz>
-        </inertia>
-      </inertial>
-      <collision name="EyesH_collision">
-        <pose>0 0 0 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/EyesH.STL</uri>
+            <uri>model://wall-e_full/meshes/visual/EyesH.STL</uri>
           </mesh>
         </geometry>
       </collision>
-      <visual name="EyesH_visual">
+      <visual name='Head_visual'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/EyesH.STL</uri>
+            <uri>model://wall-e_full/meshes/visual/Head.STL</uri>
           </mesh>
         </geometry>
         <material>
-          <diffuse>0.990196109 1 1 1</diffuse>
-          <ambient>0.990196109 1 1 1</ambient>
+          <diffuse>1 0.875 0.37500003 1</diffuse>
+          <ambient>1 0.875 0.37500003 1</ambient>
+        </material>
+      </visual>
+      <visual name='Head_fixed_joint_lump__EyesH_visual_1'>
+        <pose>-0.015500953405852801 -0.0141028247914159 -0.072607146959166896 -1.4614091857552303 0.60777228377216397 -1.5707963267949003</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://wall-e_full/meshes/visual/EyesH.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <ambient>0.5 0.5 0.5 1</ambient>
         </material>
       </visual>
     </link>
-    <joint name="LeyeJ" type="revolute">
-      <pose relative_to="Head">-0.015500953405852801 -0.0141028247914159 -0.072607146959166896 -1.4614091857552303 0.60777228377216397 -1.5707963267949003</pose>
+    <joint name='LeyeJ' type='revolute'>
+      <pose relative_to='Head'>-0.015500953405852801 -0.0141028247914159 -0.072607146959166896 -1.4614091857552303 0.60777228377216397 -1.5707963267949003</pose>
       <parent>Head</parent>
       <child>Leye</child>
       <axis>
         <xyz>1 0 0</xyz>
         <limit>
-          <lower>0</lower>
-          <upper>0.80000000000000004</upper>
+          <lower>-0.16</lower>
+          <upper>0.40000000000000002</upper>
           <effort>2</effort>
           <velocity>0.20000000000000001</velocity>
         </limit>
@@ -549,8 +509,8 @@
         </dynamics>
       </axis>
     </joint>
-    <link name="Leye">
-      <pose relative_to="LeyeJ">0 0 0 0 0 0</pose>
+    <link name='Leye'>
+      <pose relative_to='LeyeJ'>0 0 0 0 0 0</pose>
       <inertial>
         <pose>-0.0380394623700002 0.0010550215266171799 0.047059097024452302 0 0 0</pose>
         <mass>0.182702879543405</mass>
@@ -563,38 +523,38 @@
           <izz>9.0268712749170296e-05</izz>
         </inertia>
       </inertial>
-      <collision name="Leye_collision">
+      <collision name='Leye_collision'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/Leye.STL</uri>
+            <uri>model://wall-e_full/meshes/visual/Leye.STL</uri>
           </mesh>
         </geometry>
       </collision>
-      <visual name="Leye_visual">
+      <visual name='Leye_visual'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/Leye.STL</uri>
+            <uri>model://wall-e_full/meshes/visual/Leye.STL</uri>
           </mesh>
         </geometry>
         <material>
-          <diffuse>0.990196109 1 1 1</diffuse>
-          <ambient>0.990196109 1 1 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <ambient>0.5 0.5 0.5 1</ambient>
         </material>
       </visual>
     </link>
-    <joint name="ReyeJ" type="revolute">
-      <pose relative_to="Head">-0.015500953405852801 -0.0141028247914159 -0.072607146959166896 -1.4614091857552303 0.60777228377216397 -1.5707963267949003</pose>
+    <joint name='ReyeJ' type='revolute'>
+      <pose relative_to='Head'>-0.015500953405852801 -0.0141028247914159 -0.072607146959166896 -1.4614091857552303 0.60777228377216397 -1.5707963267949003</pose>
       <parent>Head</parent>
       <child>Reye</child>
       <axis>
         <xyz>1 0 0</xyz>
         <limit>
-          <lower>0</lower>
-          <upper>0.80000000000000004</upper>
+          <lower>-0.40000000000000002</lower>
+          <upper>0.16</upper>
           <effort>2</effort>
           <velocity>0.20000000000000001</velocity>
         </limit>
@@ -604,8 +564,8 @@
         </dynamics>
       </axis>
     </joint>
-    <link name="Reye">
-      <pose relative_to="ReyeJ">0 0 0 0 0 0</pose>
+    <link name='Reye'>
+      <pose relative_to='ReyeJ'>0 0 0 0 0 0</pose>
       <inertial>
         <pose>-0.037134581300910199 -0.010775114933844599 -0.0458158675801019 0 0 0</pose>
         <mass>0.17538460100883799</mass>
@@ -618,38 +578,38 @@
           <izz>9.4452312012618795e-05</izz>
         </inertia>
       </inertial>
-      <collision name="Reye_collision">
+      <collision name='Reye_collision'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/Reye.STL</uri>
+            <uri>model://wall-e_full/meshes/visual/Reye.STL</uri>
           </mesh>
         </geometry>
       </collision>
-      <visual name="Reye_visual">
+      <visual name='Reye_visual'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/Reye.STL</uri>
+            <uri>model://wall-e_full/meshes/visual/Reye.STL</uri>
           </mesh>
         </geometry>
         <material>
-          <diffuse>0 0 0 1</diffuse>
-          <ambient>0 0 0 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <ambient>0.5 0.5 0.5 1</ambient>
         </material>
       </visual>
     </link>
-    <joint name="RhandJ" type="revolute">
-      <pose relative_to="base_link">0.079279413200200793 -0.011058358517095799 0.030094066372297699 1.0756844201370701 0 0</pose>
+    <joint name='RhandJ' type='revolute'>
+      <pose relative_to='base_link'>0.079279413200200793 -0.011058358517095799 0.030094066372297699 1.0756844201370701 0 0</pose>
       <parent>base_link</parent>
       <child>Rhand</child>
       <axis>
         <xyz>-1 0 0</xyz>
         <limit>
-          <lower>0</lower>
-          <upper>0</upper>
+          <lower>2</lower>
+          <upper>4</upper>
           <effort>2</effort>
           <velocity>0.10000000000000001</velocity>
         </limit>
@@ -659,8 +619,8 @@
         </dynamics>
       </axis>
     </joint>
-    <link name="Rhand">
-      <pose relative_to="RhandJ">0 0 0 0 0 0</pose>
+    <link name='Rhand'>
+      <pose relative_to='RhandJ'>0 0 0 0 0 0</pose>
       <inertial>
         <pose>0.0151270901152484 -0.00042010560975058698 6.9451655321906003e-05 0 0 0</pose>
         <mass>0.0037479201261179699</mass>
@@ -673,31 +633,31 @@
           <izz>6.1572036819216496e-07</izz>
         </inertia>
       </inertial>
-      <collision name="Rhand_collision">
+      <collision name='Rhand_collision'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/Rhand.STL</uri>
+            <uri>model://wall-e_full/meshes/visual/Rhand.STL</uri>
           </mesh>
         </geometry>
       </collision>
-      <visual name="Rhand_visual">
+      <visual name='Rhand_visual'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/Rhand.STL</uri>
+            <uri>model://wall-e_full/meshes/visual/Rhand.STL</uri>
           </mesh>
         </geometry>
         <material>
-          <diffuse>0.990196109 1 1 1</diffuse>
-          <ambient>0.990196109 1 1 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <ambient>0.5 0.5 0.5 1</ambient>
         </material>
       </visual>
     </link>
-    <joint name="RsholderJ" type="revolute">
-      <pose relative_to="Rhand">0.024248500175045099 0.0079479495846571692 0.0095121659159040899 -1.4628309615797499 -0.61703559760346904 1.5707963267949003</pose>
+    <joint name='RsholderJ' type='revolute'>
+      <pose relative_to='Rhand'>0.024248500175045099 0.0079479495846571692 0.0095121659159040899 -1.4628309615797499 -0.61703559760346904 1.5707963267949003</pose>
       <parent>Rhand</parent>
       <child>Rsholder</child>
       <axis>
@@ -714,8 +674,8 @@
         </dynamics>
       </axis>
     </joint>
-    <link name="Rsholder">
-      <pose relative_to="RsholderJ">0 0 0 0 0 0</pose>
+    <link name='Rsholder'>
+      <pose relative_to='RsholderJ'>0 0 0 0 0 0</pose>
       <inertial>
         <pose>-0.011921340629448499 -0.00339818177914497 -0.033281583004309098 0 0 0</pose>
         <mass>0.0182925989445923</mass>
@@ -728,31 +688,31 @@
           <izz>2.4037183867589e-06</izz>
         </inertia>
       </inertial>
-      <collision name="Rsholder_collision">
+      <collision name='Rsholder_collision'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/Rsholder.STL</uri>
+            <uri>model://wall-e_full/meshes/visual/Rsholder.STL</uri>
           </mesh>
         </geometry>
       </collision>
-      <visual name="Rsholder_visual">
+      <visual name='Rsholder_visual'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/Rsholder.STL</uri>
+            <uri>model://wall-e_full/meshes/visual/Rsholder.STL</uri>
           </mesh>
         </geometry>
         <material>
-          <diffuse>0.990196109 1 1 1</diffuse>
-          <ambient>0.990196109 1 1 1</ambient>
+          <diffuse>1 0.875 0.37500003 1</diffuse>
+          <ambient>1 0.875 0.37500003 1</ambient>
         </material>
       </visual>
     </link>
-    <joint name="RarmJ" type="revolute">
-      <pose relative_to="Rsholder">0.011200906069873 -0.021020449330482398 -0.095770591891818094 -0.034256045029371199 -0.036557413445147603 -0.19778530660880703</pose>
+    <joint name='RarmJ' type='revolute'>
+      <pose relative_to='Rsholder'>0.011200906069873 -0.021020449330482398 -0.095770591891818094 -0.034256045029371199 -0.036557413445147603 -0.19778530660880703</pose>
       <parent>Rsholder</parent>
       <child>Rarm</child>
       <axis>
@@ -769,8 +729,8 @@
         </dynamics>
       </axis>
     </joint>
-    <link name="Rarm">
-      <pose relative_to="RarmJ">0 0 0 0 0 0</pose>
+    <link name='Rarm'>
+      <pose relative_to='RarmJ'>0 0 0 0 0 0</pose>
       <inertial>
         <pose>-0.023502538719194499 0.011672979455511 -0.0064568504090369303 0 0 0</pose>
         <mass>0.023369768666803199</mass>
@@ -783,28 +743,160 @@
           <izz>3.7901337412336301e-06</izz>
         </inertia>
       </inertial>
-      <collision name="Rarm_collision">
+      <collision name='Rarm_collision'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/Rarm.STL</uri>
+            <uri>model://wall-e_full/meshes/visual/Rarm.STL</uri>
           </mesh>
         </geometry>
       </collision>
-      <visual name="Rarm_visual">
+      <visual name='Rarm_visual'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://wall-e_full/meshes/visual/Rarm.STL</uri>
+            <uri>model://wall-e_full/meshes/visual/Rarm.STL</uri>
           </mesh>
         </geometry>
         <material>
-          <diffuse>0.990196109 1 1 1</diffuse>
-          <ambient>0.990196109 1 1 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <ambient>0.5 0.5 0.5 1</ambient>
         </material>
       </visual>
     </link>
+    <joint name='RBwheelJ' type='revolute'>
+      <pose relative_to='base_link'>0.1543995361091749 -0.03102855438316475 -0.14014675949600161 1.075699999988718 6.4642492803669126e-06 3.8559626470558082e-06</pose>
+      <parent>base_link</parent>
+      <child>RBwheel</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0.5</effort>
+          <velocity>0.20000000000000001</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>1.5</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='RBwheel'>
+      <pose relative_to='RBwheelJ'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.028839679281570801 1.54609783653004e-05 1.1013369193069201e-05 0 0 0</pose>
+        <mass>0.071677128435607196</mass>
+        <inertia>
+          <ixx>3.1157508925167098e-05</ixx>
+          <ixy>-1.4311355140184199e-10</ixy>
+          <ixz>-1.47147966192945e-10</ixz>
+          <iyy>1.6194257001521401e-05</iyy>
+          <iyz>-3.6056702433840998e-11</iyz>
+          <izz>1.6194252156307202e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='RBwheel_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://wall-e_full/meshes/visual/RBwheel.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='RBwheel_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://wall-e_full/meshes/visual/RBwheel.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.125 0.125 0.125 1</diffuse>
+          <ambient>0.125 0.125 0.125 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='RFwheelJ' type='revolute'>
+      <pose relative_to='base_link'>0.15540981077749769 0.06770425307459102 -0.12427736623084271 1.075699999988718 6.4642492803669126e-06 3.8559626470558082e-06</pose>
+      <parent>base_link</parent>
+      <child>RFwheel</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0.5</effort>
+          <velocity>0.20000000000000001</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>1.5</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='RFwheel'>
+      <pose relative_to='RFwheelJ'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.0264999926057694 5.3115904787293103e-06 2.1807409240626198e-06 0 0 0</pose>
+        <mass>0.022661621146591801</mass>
+        <inertia>
+          <ixx>4.8602596460364599e-06</ixx>
+          <ixy>7.18456142709878e-10</ixy>
+          <ixz>-1.7500110235386901e-09</ixz>
+          <iyy>2.6122215939482801e-06</iyy>
+          <iyz>1.1510394860931399e-09</iyz>
+          <izz>2.6098903003260702e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='RFwheel_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://wall-e_full/meshes/visual/RFwheel.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='RFwheel_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://wall-e_full/meshes/visual/RFwheel.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.125 0.125 0.125 1</diffuse>
+          <ambient>0.125 0.125 0.125 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <frame name='LwheelsFJ' attached_to='base_link'>
+      <pose>-0.12341585191344701 0.041946724222818602 -0.12513000874771599 1.0756844201370701 0 0</pose>
+    </frame>
+    <frame name='Lwheels' attached_to='LwheelsFJ'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='RwheelsFJ' attached_to='base_link'>
+      <pose>0.12411 0.041946999999999998 -0.12512999999999999 2.0659000000000001 2.1175823681357508e-21 -3.1415853071795872</pose>
+    </frame>
+    <frame name='Rwheels' attached_to='RwheelsFJ'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='EyesHJ' attached_to='Head'>
+      <pose>-0.015500953405852801 -0.0141028247914159 -0.072607146959166896 -1.4614091857552303 0.60777228377216397 -1.5707963267949003</pose>
+    </frame>
+    <frame name='EyesH' attached_to='EyesHJ'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
   </model>
 </sdf>
