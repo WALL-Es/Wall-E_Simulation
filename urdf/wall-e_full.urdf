@@ -1,0 +1,1031 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="wall-e_full">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.00072425 0.015854 -0.025799"
+        rpy="0 0 0" />
+      <mass
+        value="11" />
+      <inertia
+        ixx="0.0025114"
+        ixy="-2.7531E-05"
+        ixz="-3.5025E-06"
+        iyy="0.0022134"
+        iyz="1.9812E-05"
+        izz="0.0026656" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Rhand">
+    <inertial>
+      <origin
+        xyz="0.0151270901152484 -0.000420105609750587 6.9451655321906E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.00374792012611797" />
+      <inertia
+        ixx="1.62998097553662E-07"
+        ixy="1.71980299655676E-08"
+        ixz="-8.16181822947375E-09"
+        iyy="6.33070001501512E-07"
+        iyz="2.54528565847437E-08"
+        izz="6.15720368192165E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/Rhand.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/Rhand.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RhandJ"
+    type="revolute">
+    <origin
+      xyz="0.0792794132002008 -0.0110583585170958 0.0300940663722977"
+      rpy="1.07568442013707 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Rhand" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="2"
+      velocity="0.1" />
+  </joint>
+  <link
+    name="Rsholder">
+    <inertial>
+      <origin
+        xyz="-0.0119213406294485 -0.00339818177914497 -0.0332815830043091"
+        rpy="0 0 0" />
+      <mass
+        value="0.0182925989445923" />
+      <inertia
+        ixx="1.36162677294772E-05"
+        ixy="-5.88975805427171E-09"
+        ixz="-4.64502040268299E-08"
+        iyy="1.37666666939862E-05"
+        iyz="-1.69732886248601E-06"
+        izz="2.4037183867589E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/Rsholder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/Rsholder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RsholderJ"
+    type="revolute">
+    <origin
+      xyz="0.0242485001750451 0.00794794958465717 0.00951216591590409"
+      rpy="-1.46283096157975 -0.617035597603469 1.5707963267949" />
+    <parent
+      link="Rhand" />
+    <child
+      link="Rsholder" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="1.6"
+      effort="2"
+      velocity="0.1" />
+  </joint>
+  <link
+    name="Rarm">
+    <inertial>
+      <origin
+        xyz="-0.0235025387191945 0.011672979455511 -0.00645685040903693"
+        rpy="0 0 0" />
+      <mass
+        value="0.0233697686668032" />
+      <inertia
+        ixx="5.0787196881731E-06"
+        ixy="-1.21873227251801E-09"
+        ixz="-1.59436262819754E-09"
+        iyy="2.96127465425561E-06"
+        iyz="1.62653045119097E-06"
+        izz="3.79013374123363E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/Rarm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/Rarm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RarmJ"
+    type="revolute">
+    <origin
+      xyz="0.011200906069873 -0.0210204493304824 -0.0957705918918181"
+      rpy="-0.0342560450293712 -0.0365574134451476 -0.197785306608807" />
+    <parent
+      link="Rsholder" />
+    <child
+      link="Rarm" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="3.14"
+      effort="2"
+      velocity="0.1" />
+  </joint>
+  <link
+    name="Lhand">
+    <inertial>
+      <origin
+        xyz="0.0101270901152479 0.000274721555842294 -0.000325331096771464"
+        rpy="0 0 0" />
+      <mass
+        value="0.00374792012611804" />
+      <inertia
+        ixx="1.62998097553666E-07"
+        ixy="-7.79687362180127E-09"
+        ixz="1.73665273797952E-08"
+        iyy="6.50902239771298E-07"
+        iyz="-4.52508470059075E-09"
+        izz="5.97888129922383E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/Lhand.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/Lhand.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LhandJ"
+    type="revolute">
+    <origin
+      xyz="-0.0842205944292024 -0.00919497285261173 0.0341115128459939"
+      rpy="2.06590823345272 0 -3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="Lhand" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="2"
+      velocity="0.1" />
+  </joint>
+  <link
+    name="Lsholder">
+    <inertial>
+      <origin
+        xyz="-0.0120786593787262 0.0195047397040249 0.0271804439880072"
+        rpy="0 0 0" />
+      <mass
+        value="0.0182925989740192" />
+      <inertia
+        ixx="1.36162677327382E-05"
+        ixy="-2.63630904946591E-08"
+        ixz="-3.86949378034712E-08"
+        iyy="1.04635530723469E-05"
+        iyz="-5.43171013534269E-06"
+        izz="5.70683201171263E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/Lsholder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/Lsholder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LsholderJ"
+    type="revolute">
+    <origin
+      xyz="0.0192485001750451 0.0116867934107034 -0.00421067864858182"
+      rpy="2.18702424890012 0.0886676099420433 1.5707963267949" />
+    <parent
+      link="Lhand" />
+    <child
+      link="Lsholder" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="1.6"
+      effort="2"
+      velocity="0.1" />
+  </joint>
+  <link
+    name="Larm">
+    <inertial>
+      <origin
+        xyz="-0.0164974612808055 -0.00893436977348827 -0.00990587721123648"
+        rpy="0 0 0" />
+      <mass
+        value="0.0233697686668031" />
+      <inertia
+        ixx="5.07871968817308E-06"
+        ixy="-1.67146424151962E-09"
+        ixz="1.11063397732798E-09"
+        iyy="4.05067786846129E-06"
+        iyz="-1.53680307749797E-06"
+        izz="2.7007305270279E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/Larm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/Larm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LarmJ"
+    type="revolute">
+    <origin
+      xyz="0.00399305568475605 0.0545580157763127 0.0815532442295912"
+      rpy="2.13255459988495 0.102904174992439 0.173074399599481" />
+    <parent
+      link="Lsholder" />
+    <child
+      link="Larm" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="3.14"
+      effort="2"
+      velocity="0.1" />
+  </joint>
+  <link
+    name="Neck">
+    <inertial>
+      <origin
+        xyz="-0.0189867601505496 0.018279574840958 -0.00910763273032833"
+        rpy="0 0 0" />
+      <mass
+        value="0.055631749180625" />
+      <inertia
+        ixx="5.0781139917329E-05"
+        ixy="-2.22464848411052E-08"
+        ixz="6.17274470213113E-08"
+        iyy="1.85087162905287E-05"
+        iyz="1.71827293097959E-05"
+        izz="3.47123466619971E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/Neck.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/Neck.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="NeckJ"
+    type="revolute">
+    <origin
+      xyz="-0.020580225088796 -0.00600016267599335 0.0672678402916838"
+      rpy="2.06590823345272 0 3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="Neck" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0.7"
+      effort="2"
+      velocity="0.1" />
+  </joint>
+  <link
+    name="Head">
+    <inertial>
+      <origin
+        xyz="-0.014974584611236 -0.0167143968161734 -0.0184525950146903"
+        rpy="0 0 0" />
+      <mass
+        value="0.023620134715717" />
+      <inertia
+        ixx="7.93894777890778E-06"
+        ixy="-7.45668922195381E-10"
+        ixz="-1.52645857494008E-09"
+        iyy="6.22914827277481E-06"
+        iyz="-1.67231029043584E-06"
+        izz="3.51747349673933E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/Head.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/Head.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="HeadJ"
+    type="revolute">
+    <origin
+      xyz="-0.00399999999999995 0.0570795849650889 -0.0326190155305308"
+      rpy="0 0 0" />
+    <parent
+      link="Neck" />
+    <child
+      link="Head" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0.7"
+      effort="2"
+      velocity="0.1" />
+  </joint>
+  <link
+    name="Reye">
+    <inertial>
+      <origin
+        xyz="-0.0371345813009102 -0.0107751149338446 -0.0458158675801019"
+        rpy="0 0 0" />
+      <mass
+        value="0.175384601008838" />
+      <inertia
+        ixx="0.000103156773664722"
+        ixy="1.77010298008782E-06"
+        ixz="6.18458127840295E-06"
+        iyy="0.00011043773116029"
+        iyz="-1.75461714676587E-05"
+        izz="9.44523120126188E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/Reye.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/Reye.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ReyeJ"
+    type="revolute">
+    <origin
+      xyz="-0.0155009534058528 -0.0141028247914159 -0.0726071469591669"
+      rpy="-1.46140918575523 0.607772283772164 -1.5707963267949" />
+    <parent
+      link="Head" />
+    <child
+      link="Reye" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0.8"
+      effort="2"
+      velocity="0.2" />
+  </joint>
+  <link
+    name="Leye">
+    <inertial>
+      <origin
+        xyz="-0.0380394623700002 0.00105502152661718 0.0470590970244523"
+        rpy="0 0 0" />
+      <mass
+        value="0.182702879543405" />
+      <inertia
+        ixx="0.000107190589711804"
+        ixy="1.3535165373665E-07"
+        ixz="-5.88086899151041E-06"
+        iyy="0.000122132969308728"
+        iyz="1.26662314003714E-05"
+        izz="9.02687127491703E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/Leye.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/Leye.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LeyeJ"
+    type="revolute">
+    <origin
+      xyz="-0.0155009534058528 -0.0141028247914159 -0.0726071469591669"
+      rpy="-1.46140918575523 0.607772283772164 -1.5707963267949" />
+    <parent
+      link="Head" />
+    <child
+      link="Leye" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0.8"
+      effort="2"
+      velocity="0.2" />
+  </joint>
+  <link
+    name="EyesH">
+    <inertial>
+      <origin
+        xyz="-0.0244443833580991 0.0046191018704318 -0.000507202252887029"
+        rpy="0 0 0" />
+      <mass
+        value="0.0324345179498461" />
+      <inertia
+        ixx="3.40512588039258E-06"
+        ixy="3.99690485066516E-07"
+        ixz="-4.39353936331578E-08"
+        iyy="2.20801594799036E-05"
+        iyz="1.07482863983871E-07"
+        izz="2.30464564355676E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/EyesH.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/EyesH.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="EyesHJ"
+    type="fixed">
+    <origin
+      xyz="-0.0155009534058528 -0.0141028247914159 -0.0726071469591669"
+      rpy="-1.46140918575523 0.607772283772164 -1.5707963267949" />
+    <parent
+      link="Head" />
+    <child
+      link="EyesH" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Lwheels">
+    <inertial>
+      <origin
+        xyz="-0.0095379655853709 -0.00232752420520177 0.0348624448677597"
+        rpy="0 0 0" />
+      <mass
+        value="0.0662251477317888" />
+      <inertia
+        ixx="7.76914479792229E-05"
+        ixy="7.46023187208122E-08"
+        ixz="3.36049621190825E-07"
+        iyy="4.83865473329313E-05"
+        iyz="-6.11063724459809E-06"
+        izz="3.29557629375834E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/Lwheels.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/Lwheels.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LwheelsFJ"
+    type="fixed">
+    <origin
+      xyz="-0.123415851913447 0.0419467242228186 -0.125130008747716"
+      rpy="1.07568442013707 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Lwheels" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="LBwheel">
+    <inertial>
+      <origin
+        xyz="-0.0270724153439386 1.44468253258645E-05 -1.22723972382222E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0716771284668782" />
+      <inertia
+        ixx="3.11575089220482E-05"
+        ixy="-1.8518030864969E-10"
+        ixz="1.03388879015868E-10"
+        iyy="1.61942221191341E-05"
+        iyz="1.38748453698783E-10"
+        izz="1.6194287036228E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/LBwheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/LBwheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LBwheelJ"
+    type="revolute">
+    <origin
+      xyz="-0.0291791963941167 -0.0515956365383954 0.0537479680047583"
+      rpy="3.14159265358979 0 -3.14159265358979" />
+    <parent
+      link="Lwheels" />
+    <child
+      link="LBwheel" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0.5"
+      velocity="0.2" />
+    <dynamics
+      friction="1.5" />
+  </joint>
+  <link
+    name="LFwheel">
+    <inertial>
+      <origin
+        xyz="-0.0265000000000001 2.80438536642835E-06 -3.77644965166013E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0226616351783077" />
+      <inertia
+        ixx="4.86026109240282E-06"
+        ixy="-1.54141535026637E-09"
+        ixz="-1.14477658497428E-09"
+        iyy="2.61061777892394E-06"
+        iyz="-1.45342446040507E-09"
+        izz="2.61149565277333E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/LFwheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/LFwheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LFwheelJ"
+    type="revolute">
+    <origin
+      xyz="-0.0313 0.014447 -0.021341"
+      rpy="3.1416 0 -3.1416" />
+    <parent
+      link="Lwheels" />
+    <child
+      link="LFwheel" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0.5"
+      velocity="0.2" />
+    <dynamics
+      friction="1.5" />
+  </joint>
+  <link
+    name="Rwheels">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/Rwheels.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/Rwheels.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RwheelsFJ"
+    type="fixed">
+    <origin
+      xyz="0.12411 0.041947 -0.12513"
+      rpy="2.0659 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="Rwheels" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RBwheel">
+    <inertial>
+      <origin
+        xyz="-0.0288396792815708 1.54609783653004E-05 1.10133691930692E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0716771284356072" />
+      <inertia
+        ixx="3.11575089251671E-05"
+        ixy="-1.43113551401842E-10"
+        ixz="-1.47147966192945E-10"
+        iyy="1.61942570015214E-05"
+        iyz="-3.6056702433841E-11"
+        izz="1.61942521563072E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/RBwheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/RBwheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RBwheelJ"
+    type="revolute">
+    <origin
+      xyz="-0.030289 -0.047886 -0.057078"
+      rpy="3.1416 0 3.1416" />
+    <parent
+      link="Rwheels" />
+    <child
+      link="RBwheel" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0.5"
+      velocity="0.2" />
+    <dynamics
+      friction="1.5" />
+  </joint>
+  <link
+    name="RFwheel">
+    <inertial>
+      <origin
+        xyz="-0.0264999926057694 5.31159047872931E-06 2.18074092406262E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0226616211465918" />
+      <inertia
+        ixx="4.86025964603646E-06"
+        ixy="7.18456142709878E-10"
+        ixz="-1.75001102353869E-09"
+        iyy="2.61222159394828E-06"
+        iyz="1.15103948609314E-09"
+        izz="2.60989030032607E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/RFwheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wall-e_full/meshes/visual/RFwheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RFwheelJ"
+    type="revolute">
+    <origin
+      xyz="-0.0313 0.012988 0.022259"
+      rpy="3.1416 0 3.1416" />
+    <parent
+      link="Rwheels" />
+    <child
+      link="RFwheel" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0.5"
+      velocity="0.2" />
+    <dynamics
+      friction="1.5" />
+  </joint>
+</robot>
