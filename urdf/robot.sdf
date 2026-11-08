@@ -2,15 +2,15 @@
   <model name='wall-e_full'>
     <link name='base_link'>
       <inertial>
-        <pose>-7.5738220953898907e-05 0.015819953570941139 -0.02630656919851446 0 0 0</pose>
-        <mass>5</mass>
+        <pose>-7.5738220953898907e-05 0.01585632294949578 -0.026251812174585321 0 0 0</pose>
+        <mass>11.066225147731791</mass>
         <inertia>
-          <ixx>0.0030647654796784052</ixx>
-          <ixy>-7.7855118736839147e-05</ixy>
-          <ixz>-0.00074963675433502601</ixz>
-          <iyy>0.0039048416969432488</iyy>
-          <iyz>-2.1491483193991981e-06</iyz>
-          <izz>0.0038838739918030068</izz>
+          <ixx>0.002965983405999737</ixx>
+          <ixy>-2.4292635949135929e-05</ixy>
+          <ixz>-0.0006690491448194892</ixz>
+          <iyy>0.0038137973684475822</iyy>
+          <iyz>2.9140600032926539e-05</iyz>
+          <izz>0.0038761362466200031</izz>
         </inertia>
       </inertial>
       <collision name='base_link_collision'>
@@ -23,7 +23,7 @@
         </geometry>
       </collision>
       <collision name='base_link_fixed_joint_lump__Lwheels_collision_1'>
-        <pose>-0.12341585191344701 0.041946724222818602 -0.12513000874771599 1.0756844201370701 0 0</pose>
+        <pose>-0.12341585191344701 0.041946724222818602 -0.12513000874771599 0.76000000000000001 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -32,7 +32,7 @@
         </geometry>
       </collision>
       <collision name='base_link_fixed_joint_lump__Rwheels_collision_2'>
-        <pose>0.12411 0.041946999999999998 -0.12512999999999999 2.0659000000000001 8.4703294725430034e-22 -3.1415853071795872</pose>
+        <pose>0.12411 0.041946999999999998 -0.12512999999999999 2.25 -4.2351647362715017e-22 -3.1415853071795872</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -54,7 +54,7 @@
         </material>
       </visual>
       <visual name='base_link_fixed_joint_lump__Lwheels_visual_1'>
-        <pose>-0.12341585191344701 0.041946724222818602 -0.12513000874771599 1.0756844201370701 0 0</pose>
+        <pose>-0.12341585191344701 0.041946724222818602 -0.12513000874771599 0.76000000000000001 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -67,7 +67,7 @@
         </material>
       </visual>
       <visual name='base_link_fixed_joint_lump__Rwheels_visual_2'>
-        <pose>0.12411 0.041946999999999998 -0.12512999999999999 2.0659000000000001 8.4703294725430034e-22 -3.1415853071795872</pose>
+        <pose>0.12411 0.041946999999999998 -0.12512999999999999 2.25 -4.2351647362715017e-22 -3.1415853071795872</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -246,20 +246,20 @@
       </visual>
     </link>
     <joint name='LBwheelJ' type='revolute'>
-      <pose relative_to='base_link'>-0.15259504830756371 -0.029861589460161719 -0.1449925327678255 2.0659082334527201 2.8430855697611276e-15 -3.1415926535897918</pose>
+      <pose relative_to='base_link'>-0.15259504830756371 -0.03247977892690336 -0.1217168865191473 2.3815926535897902 2.2259666057172169e-15 -3.1415926535897909</pose>
       <parent>base_link</parent>
       <child>LBwheel</child>
       <axis>
         <xyz>-1 0 0</xyz>
         <limit>
-          <lower>0</lower>
-          <upper>0</upper>
-          <effort>0.5</effort>
-          <velocity>0.20000000000000001</velocity>
+          <lower>-1e16</lower>
+  <upper>1e16</upper>
+          <effort>10</effort>
+          <velocity>10</velocity>
         </limit>
         <dynamics>
-          <damping>0</damping>
-          <friction>1.5</friction>
+          <damping>0.01</damping>
+          <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
@@ -303,20 +303,20 @@
       </visual>
     </link>
     <joint name='LFwheelJ' type='revolute'>
-      <pose relative_to='base_link'>-0.154715851913447 0.067589206753241746 -0.1225576208148909 2.0659155798742108 -6.4642205417128398e-06 3.14158916308901</pose>
+      <pose relative_to='base_link'>-0.154715851913447 0.067120702630096729 -0.1306458859354255 2.3816000000134752 -5.0610995359574117e-06 3.1415873286471259</pose>
       <parent>base_link</parent>
       <child>LFwheel</child>
       <axis>
         <xyz>-1 0 0</xyz>
         <limit>
-          <lower>0</lower>
-          <upper>0</upper>
-          <effort>0.5</effort>
-          <velocity>0.20000000000000001</velocity>
+          <lower>-1e16</lower>
+  <upper>1e16</upper>
+          <effort>10</effort>
+          <velocity>10</velocity>
         </limit>
         <dynamics>
-          <damping>0</damping>
-          <friction>1.5</friction>
+          <damping>0.01</damping>
+          <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
@@ -767,20 +767,20 @@
       </visual>
     </link>
     <joint name='RBwheelJ' type='revolute'>
-      <pose relative_to='base_link'>0.1543995361091749 -0.03102855438316475 -0.14014675949600161 1.075699999988718 6.4642492803669126e-06 3.8559626470558082e-06</pose>
+      <pose relative_to='base_link'>0.15439954724491589 -0.032544361512240952 -0.1265339190684065 0.89159999998681061 5.7160448751643619e-06 2.731589093103288e-06</pose>
       <parent>base_link</parent>
       <child>RBwheel</child>
       <axis>
         <xyz>-1 0 0</xyz>
         <limit>
-          <lower>0</lower>
-          <upper>0</upper>
-          <effort>0.5</effort>
-          <velocity>0.20000000000000001</velocity>
+          <lower>-1e16</lower>
+  <upper>1e16</upper>
+          <effort>10</effort>
+          <velocity>10</velocity>
         </limit>
         <dynamics>
-          <damping>0</damping>
-          <friction>1.5</friction>
+          <damping>0.01</damping>
+          <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
@@ -824,20 +824,20 @@
       </visual>
     </link>
     <joint name='RFwheelJ' type='revolute'>
-      <pose relative_to='base_link'>0.15540981077749769 0.06770425307459102 -0.12427736623084271 1.075699999988718 6.4642492803669126e-06 3.8559626470558082e-06</pose>
+      <pose relative_to='base_link'>0.1554098128284159 0.067425080243403129 -0.1290069019870051 0.89159999998681061 5.7160448751643619e-06 2.731589093103288e-06</pose>
       <parent>base_link</parent>
       <child>RFwheel</child>
       <axis>
         <xyz>-1 0 0</xyz>
         <limit>
-          <lower>0</lower>
-          <upper>0</upper>
-          <effort>0.5</effort>
-          <velocity>0.20000000000000001</velocity>
+          <lower>-1e16</lower>
+  <upper>1e16</upper>
+          <effort>10</effort>
+          <velocity>10</velocity>
         </limit>
         <dynamics>
-          <damping>0</damping>
-          <friction>1.5</friction>
+          <damping>0.01</damping>
+          <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
@@ -881,13 +881,13 @@
       </visual>
     </link>
     <frame name='LwheelsFJ' attached_to='base_link'>
-      <pose>-0.12341585191344701 0.041946724222818602 -0.12513000874771599 1.0756844201370701 0 0</pose>
+      <pose>-0.12341585191344701 0.041946724222818602 -0.12513000874771599 0.76000000000000001 0 0</pose>
     </frame>
     <frame name='Lwheels' attached_to='LwheelsFJ'>
       <pose>0 0 0 0 0 0</pose>
     </frame>
     <frame name='RwheelsFJ' attached_to='base_link'>
-      <pose>0.12411 0.041946999999999998 -0.12512999999999999 2.0659000000000001 2.1175823681357508e-21 -3.1415853071795872</pose>
+      <pose>0.12411 0.041946999999999998 -0.12512999999999999 2.25 -8.4703294725430034e-22 -3.1415853071795872</pose>
     </frame>
     <frame name='Rwheels' attached_to='RwheelsFJ'>
       <pose>0 0 0 0 0 0</pose>
@@ -898,5 +898,25 @@
     <frame name='EyesH' attached_to='EyesHJ'>
       <pose>0 0 0 0 0 0</pose>
     </frame>
+
+     <plugin filename="gz-sim-diff-drive-system" 
+          name="gz::sim::systems::DiffDrive">
+
+        <left_joint>LFwheelJ</left_joint>
+        <left_joint>LBwheelJ</left_joint>
+
+        <right_joint>RFwheelJ</right_joint>
+        <right_joint>RBwheelJ</right_joint>
+
+
+        <wheel_separation>0.31</wheel_separation>
+        <wheel_radius>0.1</wheel_radius>
+
+        <topic>/cmd_vel</topic>
+        <odom_topic>/odom</odom_topic>
+  <frame_id>odom</frame_id>
+  <child_frame_id>base_link</child_frame_id>
+        
+  </plugin>
   </model>
 </sdf>

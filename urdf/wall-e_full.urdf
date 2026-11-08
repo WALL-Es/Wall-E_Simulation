@@ -716,19 +716,31 @@
       </geometry>
     </collision>
   </link>
+
+
+
   <joint
     name="LwheelsFJ"
-    type="fixed">
+    type="revolute">
     <origin
       xyz="-0.123415851913447 0.0419467242228186 -0.125130008747716"
-      rpy="1.07568442013707 0 0" />
+      rpy="0.76 0 0" />
     <parent
       link="base_link" />
     <child
       link="Lwheels" />
     <axis
       xyz="0 0 0" />
-  </joint>
+  
+    <limit
+      lower="0"
+      upper="0"
+      effort="0.5"
+      velocity="0.2" />
+    </joint>
+
+
+
   <link
     name="LBwheel">
     <inertial>
@@ -769,6 +781,8 @@
       </geometry>
     </collision>
   </link>
+
+
   <joint
     name="LBwheelJ"
     type="revolute">
@@ -887,12 +901,13 @@
       </geometry>
     </collision>
   </link>
+
   <joint
     name="RwheelsFJ"
-    type="fixed">
+    type="revolute">
     <origin
       xyz="0.12411 0.041947 -0.12513"
-      rpy="2.0659 0 3.1416" />
+      rpy="2.25 0 3.1416" />
     <parent
       link="base_link" />
     <child
@@ -902,9 +917,10 @@
     <limit
       lower="0"
       upper="0"
-      effort="0"
-      velocity="0" />
+      effort="0.5"
+      velocity="0.2" />
   </joint>
+
   <link
     name="RBwheel">
     <inertial>
