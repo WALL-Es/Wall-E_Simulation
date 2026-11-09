@@ -23,7 +23,174 @@
       <topic>/cmd_vel</topic>
     </plugin>   
 
+
+
+
+  <plugin filename="gz-sim-triggered-publisher-system"
+        name="gz::sim::systems::TriggeredPublisher">
+    <input type="gz.msgs.Int32" topic="/keyboard/keypress">
+        <match field="data">75</match>
+    </input>
+    <output type="gz.msgs.Double"
+     topic="/model/robot/joint/NeckJ/cmd_pos">
+       data: 0.6
+    </output>
+  </plugin>
   
+  <plugin filename="gz-sim-triggered-publisher-system"
+        name="gz::sim::systems::TriggeredPublisher">
+  <input type="gz.msgs.Int32" topic="/keyboard/keypress">
+    <match field="data">73</match>
+  </input>
+  <output type="gz.msgs.Double" topic="/model/robot/joint/NeckJ/cmd_pos">
+    data: 0.0
+  </output>
+</plugin>
+
+<plugin filename="gz-sim-triggered-publisher-system"
+        name="gz::sim::systems::TriggeredPublisher">
+  <input type="gz.msgs.Int32" topic="/keyboard/keypress">
+    <match field="data">75</match>
+  </input>
+  <output type="gz.msgs.Double" topic="/model/robot/joint/NeckJ/cmd_pos">
+    data: 0.6
+  </output>
+</plugin>
+
+<plugin filename="gz-sim-triggered-publisher-system"
+        name="gz::sim::systems::TriggeredPublisher">
+  <input type="gz.msgs.Int32" topic="/keyboard/keypress">
+    <match field="data">70</match>
+  </input>
+  <output type="gz.msgs.Double" topic="/model/robot/joint/LhandJ/cmd_pos">
+    data: 2.9
+  </output>
+</plugin>
+
+<plugin filename="gz-sim-triggered-publisher-system"
+        name="gz::sim::systems::TriggeredPublisher">
+  <input type="gz.msgs.Int32" topic="/keyboard/keypress">
+    <match field="data">82</match>
+  </input>
+  <output type="gz.msgs.Double" topic="/model/robot/joint/LhandJ/cmd_pos">
+    data: 4.7
+  </output>
+</plugin>
+
+<plugin filename="gz-sim-triggered-publisher-system"
+        name="gz::sim::systems::TriggeredPublisher">
+  <input type="gz.msgs.Int32" topic="/keyboard/keypress">
+    <match field="data">71</match>
+  </input>
+  <output type="gz.msgs.Double" topic="/model/robot/joint/LsholderJ/cmd_pos">
+    data: 0.05
+  </output>
+</plugin>
+
+<plugin filename="gz-sim-triggered-publisher-system"
+        name="gz::sim::systems::TriggeredPublisher">
+  <input type="gz.msgs.Int32" topic="/keyboard/keypress">
+    <match field="data">84</match>
+  </input>
+  <output type="gz.msgs.Double" topic="/model/robot/joint/LsholderJ/cmd_pos">
+    data: 1.55
+  </output>
+</plugin>
+
+<plugin filename="gz-sim-triggered-publisher-system"
+        name="gz::sim::systems::TriggeredPublisher">
+  <input type="gz.msgs.Int32" topic="/keyboard/keypress">
+    <match field="data">89</match>
+  </input>
+  <output type="gz.msgs.Double" topic="/model/robot/joint/RhandJ/cmd_pos">
+    data: 2.1
+  </output>
+</plugin>
+
+<plugin filename="gz-sim-triggered-publisher-system"
+        name="gz::sim::systems::TriggeredPublisher">
+  <input type="gz.msgs.Int32" topic="/keyboard/keypress">
+    <match field="data">72</match>
+  </input>
+  <output type="gz.msgs.Double" topic="/model/robot/joint/RhandJ/cmd_pos">
+    data: 3.9
+  </output>
+</plugin>
+
+<plugin filename="gz-sim-triggered-publisher-system"
+        name="gz::sim::systems::TriggeredPublisher">
+  <input type="gz.msgs.Int32" topic="/keyboard/keypress">
+    <match field="data">85</match>
+  </input>
+  <output type="gz.msgs.Double" topic="/model/robot/joint/RsholderJ/cmd_pos">
+    data: 0.05
+  </output>
+</plugin>
+
+<plugin filename="gz-sim-triggered-publisher-system"
+        name="gz::sim::systems::TriggeredPublisher">
+  <input type="gz.msgs.Int32" topic="/keyboard/keypress">
+    <match field="data">74</match>
+  </input>
+  <output type="gz.msgs.Double" topic="/model/robot/joint/RsholderJ/cmd_pos">
+    data: 1.55
+  </output>
+</plugin>
+
+<plugin filename="gz-sim-triggered-publisher-system"
+        name="gz::sim::systems::TriggeredPublisher">
+  <input type="gz.msgs.Int32" topic="/keyboard/keypress">
+    <match field="data">80</match>
+  </input>
+  <output type="gz.msgs.Double" topic="/model/robot/joint/LeyeJ/cmd_pos">
+    data: -0.14
+  </output>
+</plugin>
+
+<plugin filename="gz-sim-triggered-publisher-system"
+        name="gz::sim::systems::TriggeredPublisher">
+  <input type="gz.msgs.Int32" topic="/keyboard/keypress">
+    <match field="data">59</match>
+  </input>
+  <output type="gz.msgs.Double" topic="/model/robot/joint/LeyeJ/cmd_pos">
+    data: 0.38
+  </output>
+</plugin>
+
+
+<plugin filename="gz-sim-triggered-publisher-system"
+        name="gz::sim::systems::TriggeredPublisher">
+  <input type="gz.msgs.Int32" topic="/keyboard/keypress">
+    <match field="data">79</match>
+  </input>
+  <output type="gz.msgs.Double" topic="/model/robot/joint/ReyeJ/cmd_pos">
+    data: -0.38
+  </output>
+</plugin>
+
+<plugin filename="gz-sim-triggered-publisher-system"
+        name="gz::sim::systems::TriggeredPublisher">
+  <input type="gz.msgs.Int32" topic="/keyboard/keypress">
+    <match field="data">76</match>
+  </input>
+  <output type="gz.msgs.Double" topic="/model/robot/joint/ReyeJ/cmd_pos">
+    data: 0.14
+  </output>
+</plugin>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
     <include>
       <uri>
         https://fuel.gazebosim.org/1.0/OpenRobotics/models/Depot

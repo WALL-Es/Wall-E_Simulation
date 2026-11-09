@@ -89,8 +89,8 @@
         <limit>
           <lower>2.7999999999999998</lower>
           <upper>4.7999999999999998</upper>
-          <effort>2</effort>
-          <velocity>0.10000000000000001</velocity>
+          <effort>1</effort>
+          <velocity>1</velocity>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -144,8 +144,8 @@
         <limit>
           <lower>0</lower>
           <upper>1.6000000000000001</upper>
-          <effort>2</effort>
-          <velocity>0.10000000000000001</velocity>
+          <effort>1</effort>
+<velocity>2</velocity>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -199,8 +199,8 @@
         <limit>
           <lower>0</lower>
           <upper>3.1400000000000001</upper>
-          <effort>2</effort>
-          <velocity>0.10000000000000001</velocity>
+          <effort>1</effort>
+<velocity>2</velocity>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -368,8 +368,10 @@
         <limit>
           <lower>0</lower>
           <upper>0.69999999999999996</upper>
-          <effort>2</effort>
-          <velocity>0.10000000000000001</velocity>
+          <effort>
+            2
+          </effort>
+          <velocity>1</velocity>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -423,8 +425,8 @@
         <limit>
           <lower>0</lower>
           <upper>0.69999999999999996</upper>
-          <effort>2</effort>
-          <velocity>0.10000000000000001</velocity>
+          <effort>1</effort>
+<velocity>2</velocity>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -500,8 +502,8 @@
         <limit>
           <lower>-0.16</lower>
           <upper>0.40000000000000002</upper>
-          <effort>2</effort>
-          <velocity>0.20000000000000001</velocity>
+          <effort>1</effort>
+<velocity>2</velocity>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -555,8 +557,8 @@
         <limit>
           <lower>-0.40000000000000002</lower>
           <upper>0.16</upper>
-          <effort>2</effort>
-          <velocity>0.20000000000000001</velocity>
+          <effort>1</effort>
+<velocity>2</velocity>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -610,8 +612,8 @@
         <limit>
           <lower>2</lower>
           <upper>4</upper>
-          <effort>2</effort>
-          <velocity>0.10000000000000001</velocity>
+          <effort>1</effort>
+<velocity>2</velocity>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -665,8 +667,8 @@
         <limit>
           <lower>0</lower>
           <upper>1.6000000000000001</upper>
-          <effort>2</effort>
-          <velocity>0.10000000000000001</velocity>
+          <effort>1</effort>
+<velocity>2</velocity>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -720,8 +722,8 @@
         <limit>
           <lower>0</lower>
           <upper>3.1400000000000001</upper>
-          <effort>2</effort>
-          <velocity>0.10000000000000001</velocity>
+          <effort>1</effort>
+<velocity>2</velocity>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -918,5 +920,105 @@
   <child_frame_id>base_link</child_frame_id>
         
   </plugin>
+
+<plugin filename="gz-sim-joint-position-controller-system"
+        name="gz::sim::systems::JointPositionController">
+    <joint_name>NeckJ</joint_name>
+
+    <!-- <p_gain>0.5</p_gain>
+    <i_gain>0.0</i_gain>
+    <d_gain>0.05</d_gain>
+
+    <cmd_max>0.5</cmd_max>
+    <cmd_min>-0.5</cmd_min> -->
+
+    <topic>/model/robot/joint/NeckJ/cmd_pos</topic>
+</plugin>
+
+<plugin filename="gz-sim-joint-position-controller-system"
+        name="gz::sim::systems::JointPositionController">
+    <joint_name>LhandJ</joint_name>
+        <p_gain>0.5</p_gain>
+    <i_gain>0.0</i_gain>
+    <d_gain>0.05</d_gain>
+
+    <cmd_max>0.5</cmd_max>
+    <cmd_min>-0.5</cmd_min>
+    <topic>/model/robot/joint/LhandJ/cmd_pos</topic>
+</plugin>
+
+<plugin filename="gz-sim-joint-position-controller-system"
+        name="gz::sim::systems::JointPositionController">
+    <joint_name>RhandJ</joint_name>
+        <p_gain>0.5</p_gain>
+    <i_gain>0.0</i_gain>
+    <d_gain>0.05</d_gain>
+
+    <cmd_max>0.5</cmd_max>
+    <cmd_min>-0.5</cmd_min>
+    <topic>/model/robot/joint/RhandJ/cmd_pos</topic>
+</plugin>
+
+<plugin filename="gz-sim-joint-position-controller-system"
+        name="gz::sim::systems::JointPositionController">
+    <joint_name>LsholderJ</joint_name>
+        <p_gain>0.5</p_gain>
+    <i_gain>0.0</i_gain>
+    <d_gain>0.05</d_gain>
+
+    <cmd_max>0.5</cmd_max>
+    <cmd_min>-0.5</cmd_min>
+    <topic>/model/robot/joint/LsholderJ/cmd_pos</topic>
+</plugin>
+
+<plugin filename="gz-sim-joint-position-controller-system"
+        name="gz::sim::systems::JointPositionController">
+    <joint_name>RsholderJ</joint_name>
+        <p_gain>0.5</p_gain>
+    <i_gain>0.0</i_gain>
+    <d_gain>0.05</d_gain>
+
+    <cmd_max>0.5</cmd_max>
+    <cmd_min>-0.5</cmd_min>
+    <topic>/model/robot/joint/RsholderJ/cmd_pos</topic>
+</plugin>
+
+<!-- <plugin filename="gz-sim-joint-position-controller-system"
+        name="gz::sim::systems::JointPositionController">
+    <joint_name>LarmJ</joint_name>
+    <topic>/model/robot/joint/LarmJ/cmd_pos</topic>
+</plugin>
+
+<plugin filename="gz-sim-joint-position-controller-system"
+        name="gz::sim::systems::JointPositionController">
+    <joint_name>RarmJ</joint_name>
+    <topic>/model/robot/joint/RarmJ/cmd_pos</topic>
+</plugin> -->
+
+<plugin filename="gz-sim-joint-position-controller-system"
+        name="gz::sim::systems::JointPositionController">
+    <joint_name>LeyeJ</joint_name>
+        <p_gain>0.5</p_gain>
+    <i_gain>0.0</i_gain>
+    <d_gain>0.05</d_gain>
+
+    <cmd_max>0.5</cmd_max>
+    <cmd_min>-0.5</cmd_min>
+    <topic>/model/robot/joint/LeyeJ/cmd_pos</topic>
+</plugin>
+
+
+<plugin filename="gz-sim-joint-position-controller-system"
+        name="gz::sim::systems::JointPositionController">
+    <joint_name>ReyeJ</joint_name>
+        <p_gain>0.5</p_gain>
+    <i_gain>0.0</i_gain>
+    <d_gain>0.05</d_gain>
+
+    <cmd_max>0.5</cmd_max>
+    <cmd_min>-0.5</cmd_min>
+    <topic>/model/robot/joint/ReyeJ/cmd_pos</topic>
+</plugin>
+
   </model>
 </sdf>
